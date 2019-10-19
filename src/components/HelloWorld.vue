@@ -21,6 +21,9 @@
           For help and collaboration with other Vuetify developers,
           <br>please join our online
           <a href="https://community.vuetifyjs.com" target="_blank">Discord Community</a>
+          <br>
+          If you want to use icons check material design icons
+          <v-icon>mdi-crown-outline</v-icon>
         </p>
       </v-flex>
 
