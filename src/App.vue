@@ -16,20 +16,17 @@
     </v-app-bar>
 
     <v-content>
-      <HelloWorld/>
       <Vision/>
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
 import Vision from './components/Vision';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
     Vision,
   },
   data: () => ({

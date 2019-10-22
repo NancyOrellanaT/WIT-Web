@@ -4,7 +4,6 @@
       text-center
       wrap
     >
-
       <v-flex
         mb-5
         xs12
