@@ -19,6 +19,7 @@ export default {
   components: {
     Vision,
     Footer,
+    Navbar,
   },
   data: () => ({
     //
