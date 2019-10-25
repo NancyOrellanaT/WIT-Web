@@ -1,23 +1,19 @@
 <template>
   <v-container>
-    <v-row no-gutters>
-      <template>
-        <v-col>
-          <v-card
-            class="pa-2"
-            outlined
-            tile
+    <v-row justify="space-around">
+      <v-col cols="5">
+        <v-img
+          :src="image.src"
+          contain
           >
-            Column
-          </v-card>
-        </v-col>
-        <v-col>
-          <h2 align="center">{{ components.title }}</h2>
-           <v-layout justify-center>
-            <blockquote class="blockquote">{{ components.description }}</blockquote>
+        </v-img>
+      </v-col>
+      <v-col>
+        <h2 align="center">{{ components.title }}</h2>
+        <v-layout justify-center>
+          <blockquote class="blockquote">{{ components.description }}</blockquote>
         </v-layout>
-        </v-col>
-      </template>
+      </v-col>
     </v-row>
   </v-container>
 </template>
@@ -29,6 +25,9 @@ export default {
       components: {
         title: 'MISIÓN',
         description: 'La Misión de WIT es demostrar que las mujeres son capaces de muchas cosas. Liderar, resolver problemas y desarrolar software son algunas de ellas'
+      },
+      image: {
+        src: require('@/assets/Picture7.jpg')
       }
   })
 }
