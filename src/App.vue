@@ -10,18 +10,17 @@
 </template>
 
 <script>
+import Vision from './components/Vision';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
+    Vision,
     Footer,
     Navbar,
-  },
-  data: () => ({
-    //
-  }),
+  }
 };
 </script>
 
