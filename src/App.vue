@@ -4,6 +4,7 @@
       <router-view/>
       <Navbar/>
       <Vision/>
+      <Mision/>
       <Footer/>
     </v-content>
   </v-app>
@@ -13,6 +14,7 @@
 import Vision from './components/Vision';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
+import Mision from './components/Mision';
 
 export default {
   name: 'App',
@@ -20,6 +22,7 @@ export default {
     Vision,
     Footer,
     Navbar,
+    Mision,
   },
   data: () => ({
     //
