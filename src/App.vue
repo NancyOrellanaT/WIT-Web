@@ -1,25 +1,26 @@
 <template>
   <v-app>
-    <Carousel />
-    <HelloWorld />
+    <v-content>
+      <router-view/>
+      <Navbar/>
+      <Vision/>
+      <Footer/>
+    </v-content>
   </v-app>
 </template>
 
 <script>
-
-import Carousel from './components/Carousel'
-// import CoverMain from './components/CoverMain'
-import HelloWorld from './components/HelloWorld'
+import Vision from './components/Vision';
+import Footer from './components/Footer';
+import Navbar from './components/Navbar';
 
 export default {
   name: "App",
   components: {
-    Carousel,
-    // CoverMain,
-    HelloWorld
-  },
-  data: () => ({
-    //
-  })
+    Vision,
+    Footer,
+    Navbar,
+  }
 };
 </script>
+
