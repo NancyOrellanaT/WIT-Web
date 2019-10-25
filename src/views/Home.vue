@@ -2,6 +2,7 @@
   <div class="home">
     <Carousel />
     <Vision />
+    <Mision />
   </div>
 </template>
 
@@ -10,12 +11,14 @@
 import Carousel from '@/components/Carousel.vue'
 // import CoverMain from './components/CoverMain'
 import Vision from '@/components/Vision';
+import Mision from '@/components/Mision'
 
 export default {
   name: 'home',
   components: {
     Carousel,
-    Vision
+    Vision,
+    Mision
     // CoverMain,
   }
 }
