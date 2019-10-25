@@ -10,8 +10,6 @@
       </v-parallax>
     </section>
     <Members/>
-  </div>
-  <div class="about">
     <Communities/>
   </div>
 </template>
