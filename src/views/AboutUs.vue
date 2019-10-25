@@ -11,14 +11,19 @@
     </section>
     <Members/>
   </div>
+  <div class="about">
+    <Communities/>
+  </div>
 </template>
 
 <script>
 import Members from "@/components/Members.vue";
+import Communities from '@/components/Communities'
 
 export default {
   name: "about-us",
   components: {
+    Communities,
     Members
   }
 };

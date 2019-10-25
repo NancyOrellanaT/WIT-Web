@@ -1,5 +1,19 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <Communities/>
   </div>
 </template>
+
+<script>
+import Communities from '@/components/Communities'
+
+export default {
+  name: 'App',
+  components: {
+    Communities,
+  },
+  data: () => ({
+    //
+  }),
+}
+</script>
