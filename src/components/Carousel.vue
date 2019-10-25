@@ -35,11 +35,10 @@ export default {
             "https://www.robotics.es/wp-content/uploads/2019/04/teletrabajo_robotics.jpeg"
         },
         {
-          src: "https://firebasestorage.googleapis.com/v0/b/metube-120e9.appspot.com/o/Captura.PNG?alt=media&token=44dd9036-7b75-4c0d-810e-14287bb646e1"
+          src: "https://vizualsymphony.com/wp-content/uploads/2019/05/AdobeStock_180991521-copy.jpeg"
         },
         {
-          src:
-            "https://vizualsymphony.com/wp-content/uploads/2019/05/AdobeStock_180991521-copy.jpeg"
+          src:"https://firebasestorage.googleapis.com/v0/b/metube-120e9.appspot.com/o/Captura.PNG?alt=media&token=44dd9036-7b75-4c0d-810e-14287bb646e1"
         }
       ],
       slides: [
