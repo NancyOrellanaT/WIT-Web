@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row justify="space-around">
-      <v-col cols="5">
+      <v-col cols="6">
         <v-img
           :src="image.src"
           contain
