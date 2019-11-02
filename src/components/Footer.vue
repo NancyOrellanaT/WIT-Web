@@ -95,28 +95,50 @@
                               hint="example@gmail.com"
                               persistent-hint
                               outlined
-                              v-model="email"
+                              v-model="message.email"
                             :rules="[rules.required, rules.email]"
                   ></v-text-field>
                 </v-layout>
                 <v-layout class="px-10 pb-5" justify-end>
-                    <v-btn color="pink darken-1">Registrarme</v-btn>
+                  <v-dialog v-model="dialog" scrollable max-width="300px">
+                    <template v-slot:activator="{ on }">
+                      <v-btn color="pink dark -1" dark v-on="on">Registrarme</v-btn>
+                    </template>
+                    <v-card>
+                      <v-card-title>Selecciona los topicos en los que tienes intereses</v-card-title>
+                      <v-divider></v-divider>
+                      <v-card-text style="height: 300px;">
+                        <v-radio-group v-model="message.intereses[0]" column>
+                          <v-radio label="Actividades" value="actividades"></v-radio>
+                          <v-radio label="Noticias" value="noticias"></v-radio>
+                          <v-radio label="Concursos" value="concursos"></v-radio>
+                          <v-radio label="Curiosidades" value="curiosidades"></v-radio>
+                        </v-radio-group>
+                      </v-card-text>
+                      <v-divider></v-divider>
+                      <v-card-actions>
+                        <v-btn color="blue darken-1" text @click="dialog = false">Cerrar</v-btn>
+                        <v-btn type="submit" color="blue darken-1" text @click="dialog = false; addMessage()">Enviar</v-btn>
+                      </v-card-actions>
+                    </v-card>
+                   </v-dialog>
                   </v-layout>
               </v-card>
             </v-col>
           </v-row>
-
-
-        
       </v-img>
     </v-card>
   </v-footer>
 </template>
 
 <script>
+const API_URL = "http://localhost:4000/registros";
+
   export default {
     data () {
       return {
+        dialogm1: '',
+        dialog: false,
         title: 'Preliminary report',
         email: '',
         rules: {
@@ -127,7 +149,45 @@
             return pattern.test(value) || 'e-mail invalido.'
           },
         },
+        messages: [],
+        message: {
+          email: "",
+          intereses: []
+    }
       }
     },
+
+    mounted() {
+    fetch(API_URL)
+      .then(response => response.json())
+      .then(result => {
+        this.messages = result;
+      });
+    },
+    methods: {
+    addMessage() {
+      console.log(this.message);
+      fetch(API_URL, {
+        method: "POST",
+        body: JSON.stringify(this.message),
+        headers: {
+          "content-type": "application/json"
+        }
+      })
+        .then(response => response.json())
+        .then(result => {
+          if (result.details) {
+            // there was an error...
+            const error = result.details
+              .map(detail => detail.message)
+              .join(". ");
+            this.error = error;
+          } else {
+            this.error = "";
+            this.messages.push(result);
+          }
+        });
+      }
+    }
   }
 </script>
