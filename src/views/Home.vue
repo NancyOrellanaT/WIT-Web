@@ -1,28 +1,29 @@
 <template>
   <div class="home">
     <Carousel />
-    <Metricas />
+    <Metrics />
+    <MisionParallax />
+    <StorieCards />
     <Vision />
-    <Mision />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import Carousel from '@/components/Carousel.vue'
-import Metricas from '@/components/Metricas.vue'
-// import CoverMain from './components/CoverMain'
-import Vision from '@/components/Vision';
-import Mision from '@/components/Mision'
+import Metrics from '@/components/Metrics.vue'
+import StorieCards from '@/components/StorieCards.vue'
+import MisionParallax from '@/components/MisionParallax.vue'
+import Vision from '@/components/Vision'
 
 export default {
   name: 'home',
   components: {
     Carousel,
-    Metricas,
-    Vision,
-    Mision
-    // CoverMain,
+    Metrics,
+    StorieCards,
+    MisionParallax,
+    Vision
   }
 }
 </script>

@@ -1,12 +1,5 @@
 <template>
   <div>
-    <h1>Contact Me</h1>
-  <p>
-    <ul>
-      <li>Email: {{email}}</li>
-      <li>Website: {{web}}</li>
-    </ul>
-  </p>
   </div>
 </template>
 
@@ -14,10 +7,6 @@
 export default {
   name: 'Contact',
   data(){
-    return {
-      email: 'gps9705@gmail.com',
-      web: ''
-    }
   }
 }
 </script>
