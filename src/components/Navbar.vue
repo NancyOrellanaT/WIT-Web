@@ -1,22 +1,17 @@
 <template>
-  <div id="app" v-scroll="onScroll">
-    <v-app-bar :color='col' app>
+  <div v-scroll="onScroll">
+    <v-app-bar elevate-on-scroll :color="color" :dark="fontColorDark" fixed>
+      <v-toolbar-side-icon>
+        <v-img class="mr-3" src="@/assets/LogoWIT.png" height="30px" width="40px"></v-img>
+      </v-toolbar-side-icon>
       <v-btn id="info-box" text @click="toTop">
-        <v-toolbar-title class="headline text-uppercase">
-          <span>
-            <router-link tag="span" to="/">Women in Technology</router-link>
-          </span>
+        <v-toolbar-title>
+          <span to="/">Women in Technology</span>
         </v-toolbar-title>
       </v-btn>
       <v-spacer></v-spacer>
-      <v-btn text @click="toTop">
-        <router-link tag="span" to="/about-us">About Us</router-link>
-      </v-btn>
-      <v-btn text @click="toTop">
-        <router-link tag="span" to="/stories">Stories</router-link>
-      </v-btn>
-      <v-btn text @click="toTop">
-        <router-link tag="span" to="/contact">Contact</router-link>
+      <v-btn text @click="toTop" v-for="(option, i) in options" :key="i">
+        <span @click="goTo(option.to)" :color="fontColor">{{ option.name }}</span>
       </v-btn>
     </v-app-bar>
   </div>
@@ -26,21 +21,43 @@
 export default {
   data: () => ({
     fab: false,
-    col: 'transparent'
+    color: "transparent",
+    fontColorDark: true,
+    options: [
+      {
+        name: "NUESTRO EQUIPO",
+        to: "/about-us",
+        icon: ""
+      },
+      {
+        name: "ACTIVIDADES",
+        to: "/stories",
+        icon: ""
+      },
+      {
+        name: "CONTÁCTANOS",
+        to: "/contact",
+        icon: ""
+      }
+    ]
   }),
 
   methods: {
     onScroll() {
       if (typeof window === "undefined") return;
-      if(window.pageYOffset > 200){
-          this.col = "blue";
-      }else{
-          this.col = 'transparent';
+      if (window.pageYOffset > window.innerHeight / 2) {
+        this.color = "white";
+        this.fontColorDark = false;
+      } else {
+        this.navbarColor = "transparent";
+        this.fontColorDark = true;
       }
     },
-
     toTop() {
       this.$vuetify.goTo(0);
+    },
+    goTo(route) {
+      this.$route.push(route);
     }
   }
 };

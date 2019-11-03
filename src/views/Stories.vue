@@ -8,7 +8,7 @@
 import Stories from "@/components/StorieCards.vue";
 
 export default {
-  name: "about-us",
+  name: "stories",
   components: {
     Stories
   }
