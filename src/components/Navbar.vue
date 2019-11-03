@@ -49,7 +49,7 @@ export default {
         this.color = "white";
         this.fontColorDark = false;
       } else {
-        this.navbarColor = "transparent";
+        this.color = "transparent";
         this.fontColorDark = true;
       }
     },

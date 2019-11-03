@@ -44,19 +44,19 @@ export default {
       slides: [
         {
           icon: "mdi-cards-heart",
-          mainText: "WOMEN IN TECHNOLOGY",
+          mainText: "",
           secondText: "Lorem ipsum dolor sit adipiscing elit cubilia.",
           darkLettersActived: true
         },
         {
           icon: "mdi-image-filter-vintage",
-          mainText: "LOREM IPSUM DOLOR",
+          mainText: "",
           secondText: "Lorem ipsum dolor sit adipiscing elit cubilia.",
           darkLettersActived: false
         },
         {
           icon:"mdi-brightness-5",
-          mainText: "LOREM IPSUM VINTAGE A",
+          mainText: "",
           secondText: "Lorem ipsum dolor sit amet consectetur cubilia.",
           darkLettersActived: true
         }
