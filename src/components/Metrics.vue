@@ -1,8 +1,8 @@
 <template>
   <v-container class="my-10">
-    <h2 align="center" class="mt-12">METRICAS</h2>
+    <h1 align="center" class="mt-12 main-font">Metricas</h1>
     <HorizontalDivider />
-    <v-row class="mb-10">
+    <v-row class="mb-10 second-font">
       <v-col v-for="(component, i) in components" :key="i" cols="12" sm="4" md="4" align="center" justify="center">
         <v-row align="center" justify="center" class="mb-5">
           <h3>{{ component.title }}</h3>

@@ -1,6 +1,6 @@
 <template>
   <v-container fluid class="my-12">
-    <h2 align="center"> Comunidades amigas</h2>
+    <h1 align="center" class="main-font"> Comunidades amigas</h1>
     <HorizontalDivider />
     <v-row no-gutters>
       <v-col>

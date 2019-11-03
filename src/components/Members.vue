@@ -125,7 +125,6 @@ export default {
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
 
 .v-card--reveal {
   align-items: center;
@@ -134,10 +133,6 @@ export default {
   opacity: 0.5;
   position: absolute;
   width: 100%;
-}
-
-.main-font {
-  font-family: "Quicksand", sans-serif;
 }
 
 .align-bottom {

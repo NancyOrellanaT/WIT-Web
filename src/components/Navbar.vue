@@ -10,9 +10,11 @@
         </v-toolbar-title>
       </v-btn>
       <v-spacer></v-spacer>
-      <v-btn text @click="toTop" v-for="(option, i) in options" :key="i">
-        <span @click="goTo(option.to)" :color="fontColor">{{ option.name }}</span>
-      </v-btn>
+      <v-toolbar-items class="hidden-sm-and-down">
+        <v-btn text @click="toTop" v-for="(option, i) in options" :key="i">
+          <span @click="goTo(option.to)" :color="fontColor">{{ option.name }}</span>
+        </v-btn>
+      </v-toolbar-items>
     </v-app-bar>
   </div>
 </template>

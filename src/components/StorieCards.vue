@@ -2,9 +2,9 @@
   <div class="mb-8">
     <v-container class="grey lighten-5 my-12">
       <h1 class="ma-5 main-font" align="center" justify="center">Testimonios</h1>
-      <h3 class="font-weight-light " align="center" justify="center">Lorem ipsum dolor sabitant blandit id, litora congue enim rhoncus</h3>
+      <h3 class="font-weight-light second-font" align="center" justify="center">Lorem ipsum dolor sabitant blandit id, litora congue enim rhoncus</h3>
       <HorizontalDivider class="mb-6"/>
-      <v-row no-gutters>
+      <v-row no-gutters class="second-font">
         <v-col class="pa-1" v-for="(member, i) in members" :key="i" cols="12" sm="4" md="4">
           <v-hover v-slot:default="{ hover }">
             <v-card class="mx-auto" color="grey lighten-4">
