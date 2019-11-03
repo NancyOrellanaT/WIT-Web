@@ -2,7 +2,7 @@
   <div>
     <v-container class="grey lighten-5 my-6">
       <h1 class="ma-5 main-font" align="center" justify="center">Miembros</h1>
-      <h3 class="font-weight-light " align="center" justify="center">Lorem ipsum dolor sit amet consectetur adipiscing elit sagittis ultricies ornare tristique habitasse tellus felis rhoncus. Dapibus montes venenatis quam himenaeos hendrerit molestie lacus nisl habitant blandit id, litora congue enim rhoncus</h3>
+      <h3 class="font-weight-light" align="center" justify="center">Lorem ipsum dolor sit amet consectetur adipiscing elit sagittis ultricies ornare tristique habitasse tellus felis rhoncus. Dapibus montes venenatis quam himenaeos hendrerit molestie lacus nisl habitant blandit id, litora congue enim rhoncus</h3>
       <HorizontalDivider class="mb-6"/>
       <v-row no-gutters>
         <v-col class="pa-1" v-for="(member, i) in members" :key="i" cols="12" sm="4" md="4">
@@ -17,7 +17,7 @@
                     v-if="!hover"
                     elevation="7"
                     class="pa-3 ma-5"
-                    color="pink darken-1"
+                    color="deep-purple darken-3"
                     width="50%"
                   >
                     <h5
