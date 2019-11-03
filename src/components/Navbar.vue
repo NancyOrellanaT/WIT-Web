@@ -1,18 +1,16 @@
 <template>
   <div v-scroll="onScroll">
     <v-app-bar elevate-on-scroll :color="color" :dark="fontColorDark" fixed>
-      <v-toolbar-side-icon>
-        <v-img class="mr-3" src="@/assets/LogoWIT.png" height="30px" width="40px"></v-img>
-      </v-toolbar-side-icon>
       <v-btn id="info-box" text @click="toTop">
+        <v-img class="mr-3" src="@/assets/LogoWIT.png" height="30px" width="40px"></v-img>
         <v-toolbar-title>
-          <span to="/">Women in Technology</span>
+          <span @click="goTo('/')">Women in Technology</span>
         </v-toolbar-title>
       </v-btn>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
         <v-btn text @click="toTop" v-for="(option, i) in options" :key="i">
-          <span @click="goTo(option.to)" :color="fontColor">{{ option.name }}</span>
+          <span @click="goTo(option.route)" :color="color">{{ option.text }}</span>
         </v-btn>
       </v-toolbar-items>
     </v-app-bar>
@@ -25,20 +23,21 @@ export default {
     fab: false,
     color: "transparent",
     fontColorDark: true,
+    dialog: false,
     options: [
       {
-        name: "NUESTRO EQUIPO",
-        to: "/about-us",
+        text: "NUESTRO EQUIPO",
+        route: "/about-us",
         icon: ""
       },
       {
-        name: "ACTIVIDADES",
-        to: "/stories",
+        text: "ACTIVIDADES",
+        route: "/activities",
         icon: ""
       },
       {
-        name: "CONTÁCTANOS",
-        to: "/contact",
+        text: "CONTÁCTANOS",
+        route: "/",
         icon: ""
       }
     ]
@@ -59,7 +58,7 @@ export default {
       this.$vuetify.goTo(0);
     },
     goTo(route) {
-      this.$route.push(route);
+      this.$router.push(route);
     }
   }
 };
