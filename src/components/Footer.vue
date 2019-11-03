@@ -101,7 +101,7 @@
                 ></v-text-field>
               </v-layout>
               <v-layout class="px-10 pb-5" justify-end>
-                <v-dialog v-model="dialog" scrollable max-width="300px">
+                <v-dialog v-model="dialog" scrollable max-width="50%">
                   <template v-slot:activator="{ on }">
                     <v-btn color="pink dark -1" dark v-on="on" @click="checkEmail()">Registrarme</v-btn>
                   </template>
@@ -118,10 +118,11 @@
                     </v-card-text>
                     <v-divider></v-divider>
                     <v-card-actions>
-                      <v-btn color="blue darken-1" text @click="dialog = false">Cerrar</v-btn>
+                      <v-spacer></v-spacer>
+                      <v-btn color="pink lighten-3" text @click="dialog = false">Cerrar</v-btn>
                       <v-btn
                         type="submit"
-                        color="blue darken-1"
+                        color="pink lighten-3"
                         text
                         @click="dialog = false; addMessage()"
                       >Enviar</v-btn>
@@ -129,10 +130,11 @@
                   </v-card>
 
                   <v-card v-if="!full">
-                    <v-card-title>"e-mail invalido."</v-card-title>
+                    <v-card-title class="justify-center">¡Cuidado! Por favor asegurate de ingresar un e-mail invalido</v-card-title>
                     <v-divider></v-divider>
                     <v-card-actions>
-                      <v-btn color="blue darken-1" text @click="dialog = false">Cerrar</v-btn>
+                      <v-spacer></v-spacer>
+                      <v-btn color="pink lighten-3" text @click="dialog = false">Cerrar</v-btn>
                     </v-card-actions>
                   </v-card>
                 </v-dialog>

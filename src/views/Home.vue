@@ -2,6 +2,9 @@
   <div class="home">
     <Carousel />
     <Metrics />
+    <MisionParallax />
+    <StorieCards />
+    <Vision />
   </div>
 </template>
 
@@ -9,19 +12,18 @@
 // @ is an alias to /src
 import Carousel from '@/components/Carousel.vue'
 import Metrics from '@/components/Metrics.vue'
-/*import Vision from '@/components/Vision';
-import Mision from '@/components/Mision'*/
+import StorieCards from '@/components/StorieCards.vue'
+import MisionParallax from '@/components/MisionParallax.vue'
+import Vision from '@/components/Vision'
 
 export default {
   name: 'home',
   components: {
     Carousel,
-    Metrics
-    /*Vision,
-    Mision
-        
-    <Vision />
-    <Mision />*/
+    Metrics,
+    StorieCards,
+    MisionParallax,
+    Vision
   }
 }
 </script>

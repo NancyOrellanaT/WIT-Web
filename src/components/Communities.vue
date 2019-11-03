@@ -1,12 +1,13 @@
 <template>
-  <v-container fluid>
-    <h2 align="center"> Comunidades </h2>
+  <v-container fluid class="my-12">
+    <h2 align="center"> Comunidades amigas</h2>
+    <HorizontalDivider />
     <v-row no-gutters>
       <v-col>
         <v-img 
         :src="images.src1"
-        height="60"
         contain
+        height="60"
         @click="goToWebSite(webSites.gdgCochabamba)"
         >
         </v-img>
@@ -61,7 +62,12 @@
 </template>
 
 <script>
+import HorizontalDivider from './HorizontalDivider'
+
 export default {
+  components: {
+    HorizontalDivider
+  },
  data: () => ({
     images: {
       src1: require('@/assets/logo1.png'),

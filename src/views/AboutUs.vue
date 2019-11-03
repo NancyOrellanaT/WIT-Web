@@ -1,11 +1,11 @@
 <template>
   <div>
     <section>
-      <v-parallax class="image" src="https://cdn.vuetifyjs.com/images/parallax/material.jpg" height="600">
+      <v-parallax class="image" src="../assets/Picture5.jpg" height="700">
         <v-layout column align-center justify-center class="black--text">
           <h1 class="main-font mb-2 text-center">SOBRE NOSOTROS</h1>
-          <h3 class="font-weight-light mb-4 text-center">Somos una comunidad que busca fomentar mujeres y hombres en el mundo en el area de la tecnología</h3>
-          <v-btn class="mt-12" color="deep-purple darken-3" dark large rounded>Contactanos</v-btn>
+          <h3 class="font-weight-light mb-4 white--text text-center">Somos una comunidad que busca fomentar mujeres y hombres en el mundo en el area de la tecnología</h3>
+          <v-btn class="mt-12" color="deep-purple darken-3" dark large>Contactanos</v-btn>
         </v-layout>
       </v-parallax>
     </section>

@@ -1,5 +1,4 @@
 <template>
-  <v-container>
     <v-row justify="space-around">
       <v-col cols="6">
         <v-img
@@ -15,7 +14,6 @@
         </v-layout>
       </v-col>
     </v-row>
-  </v-container>
 </template>
 
 <script>

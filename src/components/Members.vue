@@ -10,7 +10,7 @@
             <v-card class="mx-auto" color="grey lighten-4" width="100%">
               <v-img
                 :aspect-ratio="1.4"
-                src="https://www.ficargentina.org/wp-content/uploads/2017/12/blank-profile-picture-973460_640.png"
+                :src="member.img"
               >
                 <v-row align="center" justify="center" class="align-bottom">
                   <v-card
@@ -18,7 +18,7 @@
                     elevation="7"
                     class="pa-3 ma-5"
                     color="pink darken-1"
-                    width="150px"
+                    width="50%"
                   >
                     <h5
                       class="mx-lg-auto white--text"
@@ -72,36 +72,43 @@ export default {
       color: "",
       members: [
         {
-          img: "",
+          img: "https://www.catalunyavoluntaria.cat/wp-content/uploads/2017/07/3-600x400.jpg",
           name: "Elena Ortega",
           occupation: "Ingeniería de Calidad",
           description:
             "Lorem ipsum dolor sit amet consectetur adipiscing elit diam, enim mi eget dis interdum dictum mattis. Eros nam ac aptent etiam felis parturient, primis massa fames arcu per quis."
         },
         {
-          img: "",
+          img: "http://memorialmoravianvi.org/wp-content/uploads/2015/01/DSC_6454web-600x400.jpg",
           name: "Ana Moya",
           occupation: "Ingeniería de Calidad",
           description:
             "Lorem ipsum dolor sit amet consectetur adipiscing elit diam, enim mi eget dis interdum dictum mattis. Eros nam ac aptent etiam felis parturient"
         },
         {
-          img: "",
+          img: "https://www.catalunyavoluntaria.cat/wp-content/uploads/2017/07/4-600x400.jpg",
           name: "Aaron Marin",
           occupation: "Desarrollador",
           description:
             "Lorem ipsum dolor sit amet consectetur adipiscing elit diam, enim mi eget dis interdum dictum mattis. Eros nam ac aptent etiam felis parturient"
         },
         {
-          img: "",
+          img: "https://www.catalunyavoluntaria.cat/wp-content/uploads/2017/07/5-600x400.jpg",
           name: "Ainara Martinez",
           occupation: "Ing. Electrónica",
           description:
             "Lorem ipsum dolor sit amet consectetur adipiscing elit diam, enim mi eget dis interdum dictum mattis. Eros nam ac aptent etiam felis parturient"
         },
         {
-          img: "",
+          img: "https://www.promoteukraine.org/wp-content/uploads/2019/05/Anna-Melenchuk-500x400.jpeg",
           name: "Teresa Castillo",
+          occupation: "Desarrollador",
+          description:
+            "Lorem ipsum dolor sit amet consectetur adipiscing elit diam, enim mi eget dis interdum dictum mattis."
+        },
+        {
+          img: "https://www.biosfera.org/wp-content/uploads/2017/07/Javi-600x400.png",
+          name: "Tom Castillo",
           occupation: "Desarrollador",
           description:
             "Lorem ipsum dolor sit amet consectetur adipiscing elit diam, enim mi eget dis interdum dictum mattis."
