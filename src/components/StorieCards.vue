@@ -1,7 +1,7 @@
 <template>
   <div class="mb-8">
     <v-container class="grey lighten-5 my-12">
-      <h1 class="ma-5 main-font" align="center" justify="center">Testimonios</h1>
+      <h1 class="mb-5 main-font" align="center" justify="center">Testimonios</h1>
       <h3 class="font-weight-light second-font" align="center" justify="center">Lorem ipsum dolor sabitant blandit id, litora congue enim rhoncus</h3>
       <HorizontalDivider class="mb-6"/>
       <v-row no-gutters class="second-font">

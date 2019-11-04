@@ -33,4 +33,8 @@ export default {
   color: #D81B60;
 }
 
+.header {
+  font-size: 3em;
+}
+
 </style>
