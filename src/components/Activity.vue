@@ -3,7 +3,7 @@
     <v-row
       v-for="(activity, i) in Activities"
       :key="i"
-      :class="n === 1 ? 'mb-6' : ''"
+      :class="i === 1 ? 'mb-6' : ''"
       class="mb-6"
       justify="center"
       no-gutters
@@ -15,22 +15,22 @@
         <v-lazy
           v-model="isActive"
           :options="{
-          threshold: .5
+          threshold: 1.0
           }"
           min-height="200"
           transition="fade-transition"
         >
           <v-img class="image"
             :aspect-ratio="1.4"
-            src="https://www.ficargentina.org/wp-content/uploads/2017/12/blank-profile-picture-973460_640.png"
+            :src="activity.img"
           >
             <v-row align="center" class="pa-2 fill-height">
               <v-col>
                 <v-layout column align-center justify-center class="text-xs-center">
-                <h2 align="center" justify="center">
+                <h2 align="center" justify="center" class="header white--text mb-2 text-center">
                 {{ activity.name }}
                 </h2>
-                <h3 class="font-weight-light mb-4 text-center"
+                <h3 class="font-weight-light mb-4 white--text text-center"
                   align="center"
                   justify="center"
                 >
@@ -51,36 +51,37 @@ export default {
     return {
       Activities: [
         {
-          img: "",
+          img: "https://miro.medium.com/max/6000/0*RvHATxQafaryTA0a",
           name: "Actividad1",
           description:
             "Lorem ipsum dolor sit amet consectetur adipiscing elit diam, enim mi eget dis interdum dictum mattis. Eros nam ac aptent etiam felis parturient, primis massa fames arcu per quis."
         },
         {
-          img: "",
+          img: "https://www.mendix.com/wp-content/uploads/blog-ideal-scrum-team-composition.jpg",
           name: "Actividad2",
           description:
             "Lorem ipsum dolor sit amet consectetur adipiscing elit diam, enim mi eget dis interdum dictum mattis. Eros nam ac aptent etiam felis parturient"
         },
         {
-          img: "",
+          img: "https://hackernoon.com/hn-images/1*mxhWy2lwPrRLIff5Kh9YTg.jpeg",
           name: "Actividad3",
           description:
             "Lorem ipsum dolor sit amet consectetur adipiscing elit diam, enim mi eget dis interdum dictum mattis. Eros nam ac aptent etiam felis parturient"
         },
         {
-          img: "",
+          img: "https://www.dijitalfarm.com/wp-content/uploads/2018/01/jon-parks-agile-marketing-workshop-1080x675.jpg",
           name: "Actividad4",
           description:
             "Lorem ipsum dolor sit amet consectetur adipiscing elit diam, enim mi eget dis interdum dictum mattis. Eros nam ac aptent etiam felis parturient"
         },
         {
-          img: "",
+          img: "https://images.ctfassets.net/3cttzl4i3k1h/39iTil6Z8coiC4qwoI6AeS/2ba0079ff86d1633fb42d8cd6576e664/IMG_6761.jpg?w=1400&h=600&q=80&fm=&f=&fit=fill",
           name: "Actividad5",
           description:
             "Lorem ipsum dolor sit amet consectetur adipiscing elit diam, enim mi eget dis interdum dictum mattis."
         }
-      ]
+      ],
+      isActive: false,
     };
   },
 }
