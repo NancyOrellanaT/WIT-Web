@@ -1,6 +1,6 @@
 <template>
   <section>
-    <v-parallax src="../assets/Picture11.jpg" height="600">
+    <v-parallax src="../assets/Picture11.jpg" height="700" center>
       <v-layout column align-center justify-center class="white--text">
         <div class="ma-12"/>
         <h1 class="white--text mb-2 parallax-font text-center">Comparte con nosotros</h1>
@@ -17,4 +17,5 @@
 .parallax-font {
   font-size: 3em;
 }
+
 </style>
