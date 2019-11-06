@@ -1,17 +1,19 @@
 <template>
   <v-container fluid class="my-12">
-    <h1 align="center" class="main-font"> Comunidades amigas</h1>
+    <h1 id="labelCommunitiesTitle" align="center" class="main-font"> Comunidades amigas</h1>
     <HorizontalDivider />
     <v-row no-gutters>
       <v-col>
-        <v-img 
+        <v-img
+        id="imageCommunity0"
         :src="images.src1"
         contain
         height="60"
         @click="goToWebSite(webSites.gdgCochabamba)"
         >
         </v-img>
-        <v-img 
+        <v-img
+        id="imageCommunity1"
         :src="images.src2"
         height="80"
         contain
@@ -23,6 +25,7 @@
     <v-row no-gutters>
       <v-col>
         <v-img
+        id="imageCommunity2"
         :src="images.src3"
         height="80"
         contain
@@ -32,6 +35,7 @@
       </v-col>
       <v-col>
         <v-img
+        id="imageCommunity3"
         :src="images.src4"
         height="80"
         contain
@@ -41,6 +45,7 @@
       </v-col>
       <v-col>
         <v-img
+        id="imageCommunity4"
         :src="images.src6"
         height="100"
         contain
@@ -50,6 +55,7 @@
       </v-col>
       <v-col>
         <v-img
+        id="imageCommunity5"
         :src="images.src5"
         height="100"
         contain

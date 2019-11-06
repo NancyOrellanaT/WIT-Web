@@ -3,7 +3,7 @@
       <v-col align-self="center">
         <HorizontalDivider />
         <v-layout justify-center>
-            <blockquote class="blockquote">{{ description }}</blockquote>
+            <blockquote id="labelMessage" class="blockquote">{{ description }}</blockquote>
         </v-layout>
         <HorizontalDivider class="mb-12"/>
       </v-col>

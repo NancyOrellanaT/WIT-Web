@@ -1,14 +1,15 @@
 <template>
   <div class="mb-8">
     <v-container class="grey lighten-5 my-12">
-      <h1 class="mb-5 main-font" align="center" justify="center">Testimonios</h1>
-      <h3 class="font-weight-light second-font" align="center" justify="center">Lorem ipsum dolor sabitant blandit id, litora congue enim rhoncus</h3>
+      <h1 id="labelTestimonialsTitle" class="mb-5 main-font" align="center" justify="center">Testimonios</h1>
+      <h3 id="labelTestimonialsDescription" class="font-weight-light second-font" align="center" justify="center">Lorem ipsum dolor sabitant blandit id, litora congue enim rhoncus</h3>
       <HorizontalDivider class="mb-6"/>
       <v-row no-gutters class="second-font">
         <v-col class="pa-1" v-for="(member, i) in members" :key="i" cols="12" sm="4" md="4">
           <v-hover v-slot:default="{ hover }">
-            <v-card class="mx-auto" color="grey lighten-4">
+            <v-card :id="'cardTestimonyMember' + i" class="mx-auto" color="grey lighten-4">
               <v-img
+                :id="'imgTestimony' + i"
                 contain
                 height="100%"
                 width="100%"
@@ -24,6 +25,7 @@
                     width="50%"
                   >
                     <h5
+                      :id="'nameTestimony' + i"
                       class="mx-lg-auto white--text"
                       align="center"
                       justify="center"
@@ -38,9 +40,9 @@
                     align="center"
                     justify="center"
                   >
-                    <h3 class="mt-5">{{ convertNameToUpperCase(member.name) }}</h3>
-                    <h3>{{ member.occupation }}</h3>
-                    <h4 class="pa-5 font-weight-regular">{{ member.storie }}</h4>
+                    <h3 class="mt-5" :id="'labelHoverName' + i">{{ convertNameToUpperCase(member.name) }}</h3>
+                    <h3 :id="'labelHoverOccupation' + i">{{ member.occupation }}</h3>
+                    <h4 class="pa-5 font-weight-regular" :id="'labelHoverTestimony' + i">{{ member.storie }}</h4>
                   </div>
                 </v-expand-transition>
               </v-img>
