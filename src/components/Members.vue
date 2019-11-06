@@ -1,14 +1,15 @@
 <template>
   <div>
     <v-container class="grey lighten-5 my-6">
-      <h1 class="ma-5 main-font" align="center" justify="center">Miembros</h1>
-      <h3 class="font-weight-light" align="center" justify="center">Lorem ipsum dolor sit amet consectetur adipiscing elit sagittis ultricies ornare tristique habitasse tellus felis rhoncus. Dapibus montes venenatis quam himenaeos hendrerit molestie lacus nisl habitant blandit id, litora congue enim rhoncus</h3>
+      <h1 id="labelMembersTitle" class="ma-5 main-font" align="center" justify="center">Miembros</h1>
+      <h3 id="labelMembersDescription" class="font-weight-light" align="center" justify="center">Lorem ipsum dolor sit amet consectetur adipiscing elit sagittis ultricies ornare tristique habitasse tellus felis rhoncus. Dapibus montes venenatis quam himenaeos hendrerit molestie lacus nisl habitant blandit id, litora congue enim rhoncus</h3>
       <HorizontalDivider class="mb-6"/>
       <v-row no-gutters>
         <v-col class="pa-1" v-for="(member, i) in members" :key="i" cols="12" sm="4" md="4">
           <v-hover v-slot:default="{ hover }">
-            <v-card class="mx-auto" color="grey lighten-4" width="100%">
+            <v-card :id="'cardMember' + i" class="mx-auto" color="grey lighten-4" width="100%">
               <v-img
+                :id="'imageCardMember' + i"
                 :aspect-ratio="1.4"
                 :src="member.img"
               >
@@ -21,6 +22,7 @@
                     width="50%"
                   >
                     <h5
+                      :id="'nameMember' + i"
                       class="mx-lg-auto white--text"
                       align="center"
                       justify="center"
@@ -35,20 +37,20 @@
                     align="center"
                     justify="center"
                   >
-                    <h3 class="mt-5">{{ convertNameToUpperCase(member.name) }}</h3>
-                    <h3>{{ member.occupation }}</h3>
-                    <h4 class="pa-5 font-weight-regular">{{ member.description }}</h4>
+                    <h3 :id="'labelMemberName' + i" class="mt-5">{{ convertNameToUpperCase(member.name) }}</h3>
+                    <h3 :id="'labelMemberOccupation' + i">{{ member.occupation }}</h3>
+                    <h4 :id="'labelMemberDescription' + i" class="pa-5 font-weight-regular">{{ member.description }}</h4>
                   </div>
                 </v-expand-transition>
               </v-img>
               <v-card-text class="white" align="center" justify="center">
-                <v-btn class="mx-2" fab dark small color="primary" text>
+                <v-btn :id="'buttonMemberLinkedin' + i" class="mx-2" fab dark small color="primary" text>
                   <v-icon dark>mdi-linkedin</v-icon>
                 </v-btn>
-                <v-btn class="mx-2" fab dark small color="light-blue darken-1" text>
+                <v-btn :id="'buttonMemberTwitter' + i" class="mx-2" fab dark small color="light-blue darken-1" text>
                   <v-icon dark>mdi-twitter</v-icon>
                 </v-btn>
-                <v-btn class="mx-2" fab small color="indigo" text>
+                <v-btn :id="'buttonMemberFacebook' + i" class="mx-2" fab small color="indigo" text>
                   <v-icon dark>mdi-facebook</v-icon>
                 </v-btn>
               </v-card-text>

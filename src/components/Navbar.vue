@@ -1,15 +1,15 @@
 <template>
   <div v-scroll="onScroll">
-    <v-app-bar elevate-on-scroll :color="color" :dark="fontColorDark" fixed>
-      <v-btn id="info-box" text @click="toTop">
+    <v-app-bar id="appbar" elevate-on-scroll :color="color" :dark="fontColorDark" fixed>
+      <v-btn id="buttonAppbarToHome" text @click="toTop">
         <v-img class="mr-3" src="@/assets/LogoWIT.png" height="30px" width="40px"></v-img>
-        <v-toolbar-title>
+        <v-toolbar-title id="labelAppbarTitle">
           <span @click="goTo('/')">Women in Technology</span>
         </v-toolbar-title>
       </v-btn>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn text @click="toTop" v-for="(option, i) in options" :key="i">
+        <v-btn text @click="toTop" v-for="(option, i) in options" :key="i" :id="option.id">
           <span @click="goTo(option.route)" :color="color">{{ option.text }}</span>
         </v-btn>
       </v-toolbar-items>
@@ -26,16 +26,19 @@ export default {
     dialog: false,
     options: [
       {
+        id: "buttonAppbarOurTeam",
         text: "NUESTRO EQUIPO",
         route: "/about-us",
         icon: ""
       },
       {
+        id: "buttonAppbarActivities",
         text: "ACTIVIDADES",
         route: "/activities",
         icon: ""
       },
       {
+        id: "buttonAppbarContactUs",
         text: "CONTÁCTANOS",
         route: "/",
         icon: ""

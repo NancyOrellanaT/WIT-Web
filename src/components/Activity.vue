@@ -12,6 +12,7 @@
         cols="12"
         md="11"
       >
+        <HorizontalDivider />
         <v-lazy
           v-model="isActive"
           :options="{
@@ -21,16 +22,18 @@
           transition="fade-transition"
         >
           <v-img class="image"
+            :id="'imageActivity' + i"
             :aspect-ratio="1.4"
             :src="activity.img"
           >
             <v-row align="center" class="pa-2 fill-height">
               <v-col>
                 <v-layout column align-center justify-center class="text-xs-center">
-                <h2 align="center" justify="center" class="header white--text mb-2 text-center">
+                <h2 :id="'labelActivityTitle' + i" align="center" justify="center" class="header ma-5 main-font mb-2 text-center">
                 {{ activity.name }}
                 </h2>
                 <h3 class="font-weight-light mb-4 white--text text-center"
+                  :id="'labelActivityDescription' + i"
                   align="center"
                   justify="center"
                 >
@@ -46,7 +49,12 @@
 </template>
 
 <script>
+import HorizontalDivider from './HorizontalDivider'
+
 export default {
+  components: {
+    HorizontalDivider
+  },
   data() {
     return {
       Activities: [
