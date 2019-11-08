@@ -41,39 +41,21 @@ export default {
       slides: [
         {
           id: 'iconSlides1',
-          icon: "mdi-cards-heart",
-          mainText: "",
-          secondText: "Lorem ipsum dolor sit adipiscing elit cubilia.",
-          darkLettersActived: true
+          icon: "mdi-cards-heart"
         },
         {
           id: 'iconSlides2',
-          icon: "mdi-image-filter-vintage",
-          mainText: "",
-          secondText: "Lorem ipsum dolor sit adipiscing elit cubilia.",
-          darkLettersActived: false
+          icon: "mdi-image-filter-vintage"
         }
       ]
     };
   }
 };
 </script>
-<style scoped>
-@import url('https://fonts.googleapis.com/css?family=Lobster|Montserrat+Alternates|Quicksand&display=swap');
 
+<style scoped>
 .image {
   filter: brightness(0.7);
-}
-
-.main-font {
-  font-family: "Quicksand", sans-serif;
-  font-size: 3em;
-  color: #d81b60;
-}
-
-.font-type-1 {
-  font-family: 'Montserrat Alternates', sans-serif;
-  font-size: 1.5em;
 }
 
 #carousel {
