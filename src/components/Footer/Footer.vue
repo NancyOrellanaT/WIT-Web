@@ -106,17 +106,15 @@
                 ></v-text-field>
               </v-layout>
               <v-layout class="px-10 pb-5" justify-end>
+                <v-btn
+                  id="buttonFooterSignin"
+                  color="pink dark -1"
+                  dark
+                  v-on="on"
+                  @click.stop="checkEmail()"
+                >Registrarme</v-btn>
                 <v-dialog id="dialogSignin" v-model="dialog" scrollable max-width="50%">
-                  <template v-slot:activator="{ on }">
-                    <v-btn
-                      id="buttonFooterSignin"
-                      color="pink dark -1"
-                      dark
-                      v-on="on"
-                      @click="checkEmail()"
-                    >Registrarme</v-btn>
-                  </template>
-                  <v-card id="cardSignin" v-if="full">
+                  <v-card id="cardSignin">
                     <v-card-title
                       id="labelCardInterests"
                     >Selecciona los tópicos en los que tienes intereses</v-card-title>
@@ -163,13 +161,18 @@
                         type="submit"
                         color="pink lighten-3"
                         text
-                        @click="dialog = false; addMessage(); addMessageSnackbar(true)"
+                        @click="addMessage(); addMessageSnackbar(true)"
                       >Enviar</v-btn>
                     </v-card-actions>
                   </v-card>
                 </v-dialog>
               </v-layout>
-              <v-snackbar id="snackbarFooterMessagge" :color="colorSnackbar" v-model="snackbar" timeout="2000">
+              <v-snackbar
+                id="snackbarFooterMessagge"
+                :color="colorSnackbar"
+                v-model="snackbar"
+                timeout="2000"
+              >
                 {{ textSnackbar }}
                 <v-btn color="white" text @click="snackbar = false">X</v-btn>
               </v-snackbar>
@@ -221,9 +224,8 @@ export default {
   methods: {
     checkEmail() {
       if (this.validEmail(this.message.email)) {
-        this.full = true;
+        this.activateDialog();
       } else {
-        this.full = false;
         this.addMessageSnackbar(false);
       }
     },
@@ -253,9 +255,18 @@ export default {
         });
     },
     addMessageSnackbar(successful) {
-      this.colorSnackbar = successful ? 'green darken-2' : 'red darken-2';
-      this.textSnackbar = successful ? '¡Gracias por enviarnos tus preferencias!, pronto estaremos contactándonos contigo.' : '¡Cuidado! Por favor asegurate de ingresar un e-mail invalido';
+      this.disableDialog();
+      this.colorSnackbar = successful ? "green darken-2" : "red darken-2";
+      this.textSnackbar = successful
+        ? "¡Gracias por enviarnos tus preferencias!, pronto estaremos contactándonos contigo."
+        : "¡Cuidado! Por favor asegurate de ingresar un e-mail invalido";
       this.snackbar = true;
+    },
+    activateDialog() {
+      this.dialog = true;
+    },
+    disableDialog() {
+      this.dialog = false;
     }
   }
 };
