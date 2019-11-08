@@ -15,8 +15,8 @@
 </template>
 
 <script>
-import Members from "@/components/Members.vue";
-import Communities from '@/components/Communities'
+import Members from "@/components/AboutUs/Members";
+import Communities from '@/components/AboutUs/Communities'
 
 export default {
   name: "about-us",

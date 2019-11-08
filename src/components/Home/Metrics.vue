@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import HorizontalDivider from "./HorizontalDivider";
+import HorizontalDivider from "../Utils/HorizontalDivider";
 
 export default {
   components: {

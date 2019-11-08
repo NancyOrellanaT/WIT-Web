@@ -13,7 +13,6 @@
                 contain
                 height="100%"
                 width="100%"
-                
                 :src="member.img"
               >
                 <v-row align="center" justify="center" class="align-bottom">
@@ -55,7 +54,7 @@
 </template>
 
 <script>
-import HorizontalDivider from './HorizontalDivider'
+import HorizontalDivider from '../Utils/HorizontalDivider'
 
 export default {
   components: {
@@ -132,4 +131,5 @@ export default {
 .align-bottom {
   margin-top: 49%;
 }
+
 </style>
