@@ -110,7 +110,6 @@
                   id="buttonFooterSignin"
                   color="pink dark -1"
                   dark
-                  v-on="on"
                   @click.stop="checkEmail()"
                 >Registrarme</v-btn>
                 <v-dialog id="dialogSignin" v-model="dialog" scrollable max-width="50%">
@@ -171,7 +170,7 @@
                 id="snackbarFooterMessagge"
                 :color="colorSnackbar"
                 v-model="snackbar"
-                timeout="2000"
+                :timeout="timeout"
               >
                 {{ textSnackbar }}
                 <v-btn color="white" text @click="snackbar = false">X</v-btn>
@@ -194,6 +193,7 @@ export default {
       dialogm1: "",
       dialog: false,
       snackbar: false,
+      timeout: 2000,
       colorSnackbar: "",
       textSnackbar: "",
       title: "Preliminary report",
