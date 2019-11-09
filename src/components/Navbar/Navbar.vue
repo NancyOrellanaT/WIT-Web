@@ -13,19 +13,19 @@
           <span @click="goTo(option.route)" :color="color">{{ option.text }}</span>
         </v-btn>
       </v-toolbar-items>
-      <v-btn icon class="hidden-md-and-up" @click="sidebar = !sidebar">
+      <v-btn id="buttonNavbarOpenDrawerMenu" icon class="hidden-md-and-up" @click="sidebar = !sidebar">
         <v-icon>mdi-dots-vertical</v-icon>
       </v-btn>
     </v-app-bar>
 
     <v-navigation-drawer v-model="sidebar" fixed>
       <v-list dense>
-        <v-list-item v-for="(option, i) in options" :key="i" link :to="option.route" @click="toTop()">
+        <v-list-item v-for="(option, i) in options" :key="i" link :to="option.route" @click="toTop()" :id="option.id">
           <v-list-item-icon>
-            <v-icon>{{ option.icon }}</v-icon>
+            <v-icon :id="option.idIcon">{{ option.icon }}</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
-            <v-list-item-title>{{ option.text }}</v-list-item-title>
+            <v-list-item-title :id="option.idText">{{ option.text }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -43,20 +43,26 @@ export default {
     options: [
       {
         id: "buttonAppbarOurTeam",
+        idText: 'titleNavigationDrawerOurTeam',
         text: "NUESTRO EQUIPO",
         route: "/about-us",
+        idIcon: 'iconNavigationDrawerOurTeam',
         icon: "mdi-face"
       },
       {
         id: "buttonAppbarActivities",
+        idText: 'titleNavigationDrawerActivities',
         text: "ACTIVIDADES",
         route: "/activities",
+        idIcon: 'iconNavigationDrawerActivities',
         icon: "mdi-home"
       },
       {
         id: "buttonAppbarContactUs",
+        idText: 'titleNavigationDrawerOurContactUs',
         text: "CONTÁCTANOS",
         route: "/",
+        idIcon: 'iconNavigationDrawerContactUs',
         icon: "mdi-phone"
       }
     ]
