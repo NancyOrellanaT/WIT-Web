@@ -15,8 +15,8 @@
 </template>
 
 <script>
-import Members from "@/components/AboutUs/Members";
-import Communities from '@/components/AboutUs/Communities'
+import Members from "@/components/about-us/Members";
+import Communities from '@/components/about-us/Communities'
 
 export default {
   name: "about-us",

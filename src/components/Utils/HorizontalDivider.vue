@@ -9,6 +9,7 @@
 </template>
 
 <style scoped>
+
 .block-divider {
   width: 50%;
 }

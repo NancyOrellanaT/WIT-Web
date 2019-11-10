@@ -1,7 +1,7 @@
 <template>
   <div class="mb-12">
     <v-row
-      v-for="(activity, i) in Activities"
+      v-for="(activity, i) in activities"
       :key="i"
       :class="i === 1 ? 'mb-6' : ''"
       class="mb-6"
@@ -49,7 +49,7 @@
 </template>
 
 <script>
-import HorizontalDivider from '../Utils/HorizontalDivider'
+import HorizontalDivider from '../utils/HorizontalDivider'
 
 export default {
   components: {
@@ -57,7 +57,7 @@ export default {
   },
   data() {
     return {
-      Activities: [
+      activities: [
         {
           img: "https://miro.medium.com/max/6000/0*RvHATxQafaryTA0a",
           name: "Actividad 1",
