@@ -1,44 +1,56 @@
 <template>
-    <v-form
-      class="formContactForm ma-12"
-      ref="form"
-      v-model="valid"
-      :lazy-validation="lazy"
-    >
-      <v-text-field
-        class="textfieldContactNamefield"
-        v-model="nombre"
-        :counter="50"
-        :rules="nameRules"
-        label="Nombre"
-        required
-      ></v-text-field>
+    <v-container class="containerContactFormPrincipalContainer mt-12" fluid grid-list-md>
+      <v-layout row wrap>
+        <v-flex fill-height xs12 sm6 md6>
+          <v-card color="transparent">
+            <v-card-title primary class="title">EL MAPA AQUI</v-card-title>
+            </v-card>
+        </v-flex>
+        <v-flex fill-height xs12 sm6 md6>
+          <v-card color="transparent">
+            <v-layout justify-center>
+              <v-card-title primary class="title">FORMULARIO DE CONTACTO</v-card-title>
+            </v-layout>
+            <v-form
+              class="formContactForm pd-12 pr-12 pl-12"
+              ref="form"
+              v-model="valid"
+              :lazy-validation="lazy"
+            >
+              <v-text-field
+                class="textfieldContactNamefield"
+                v-model="nombre"
+                :counter="50"
+                :rules="nameRules"
+                label="Nombre"
+                required
+              ></v-text-field>
 
-      <v-text-field
-        class="textfieldContactEmailfield"
-        v-model="email"
-        :rules="emailRules"
-        label="E-mail"
-        required
-      ></v-text-field>
+              <v-text-field
+                class="textfieldContactEmailfield"
+                v-model="email"
+                :rules="emailRules"
+                label="E-mail"
+                required
+              ></v-text-field>
 
-      <v-text-field
-        class="textfieldContactMessagefield"
-        v-model="mensaje"
-        :rules="messageRules"
-        label="Message"
-        required
-      ></v-text-field>
+              <v-text-field
+                class="textfieldContactMessagefield"
+                v-model="mensaje"
+                :rules="messageRules"
+                label="Message"
+                required
+              ></v-text-field>
 
-      <v-btn
-        :disabled="!valid"
-        color="success"
-        class="mr-4"
-        @click="validate(); addMessageSnackbar(true)"
-      >
-        Validate
-      </v-btn>
-      <v-snackbar
+              <v-btn
+                :disabled="!valid"
+                color="success"
+                class="mr-4"
+                @click="validate(); addMessageSnackbar(true)"
+              >
+                Validate
+              </v-btn>
+              <v-snackbar
                 id="snackbarFooterMessagge"
                 :color="colorSnackbar"
                 v-model="snackbar"
@@ -47,8 +59,11 @@
                 {{ textSnackbar }}
                 <v-btn color="white" text @click="snackbar = false">X</v-btn>
               </v-snackbar>
-    </v-form>
-    
+            </v-form>
+          </v-card>
+        </v-flex>
+      </v-layout>
+    </v-container>
 </template>
 
 <script>
@@ -120,8 +135,8 @@
         addMessageSnackbar(successful) {
       this.colorSnackbar = successful ? "green darken-2" : "red darken-2";
       this.textSnackbar = successful
-        ? "¡Gracias por enviarnos tus preferencias!, pronto estaremos contactándonos contigo."
-        : "¡Cuidado! Por favor asegurate de ingresar un e-mail invalido";
+        ? "¡Gracias por enviarnos el mensa!, pronto recibiras un respuesta en tu correo."
+        : "¡Algo salio mal al tratar de enviar tu mensaje!";
       this.snackbar = true;
     }
     },
