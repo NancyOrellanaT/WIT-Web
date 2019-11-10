@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import HorizontalDivider from '../Utils/HorizontalDivider'
+import HorizontalDivider from '../utils/HorizontalDivider'
 
 export default {
   components: {
