@@ -61,7 +61,7 @@ export default {
         id: "buttonAppbarContactUs",
         idText: 'titleNavigationDrawerOurContactUs',
         text: "CONTÁCTANOS",
-        route: "/",
+        route: "/contact",
         idIcon: 'iconNavigationDrawerContactUs',
         icon: "mdi-phone"
       }
