@@ -76,12 +76,12 @@ export default {
   },
  data: () => ({
     images: {
-      src1: require('@/assets/logo1.png'),
-      src2: require('@/assets/logo2.png'),
-      src3: require('@/assets/logo3.png'),
-      src4: require('@/assets/logo4.png'),
-      src5: require('@/assets/logo5.jpg'),
-      src6: require('@/assets/logo6.png') 
+      src1: require('@/assets/communitiesLogos/logo1.png'),
+      src2: require('@/assets/communitiesLogos/logo2.png'),
+      src3: require('@/assets/communitiesLogos/logo3.png'),
+      src4: require('@/assets/communitiesLogos/logo4.png'),
+      src5: require('@/assets/communitiesLogos/logo5.jpg'),
+      src6: require('@/assets/communitiesLogos/logo6.png') 
     },
     webSites: {
       gp4Tech: 'https://gp4tech.com/',

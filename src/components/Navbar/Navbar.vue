@@ -2,7 +2,7 @@
   <div v-scroll="onScroll">
     <v-app-bar id="appbar" elevate-on-scroll :color="color" :dark="fontColorDark" fixed>
       <v-btn id="buttonAppbarToHome" text @click="toTop">
-        <v-img class="mr-3" src="@/assets/LogoWIT.png" height="20px" width="30px"></v-img>
+        <v-img class="mr-3" src="@/assets/communitiesLogos/LogoWIT.png" height="20px" width="30px"></v-img>
         <v-toolbar-title id="labelAppbarTitle">
           <span @click="goTo('/')" class="font-navbar">Women in Technology</span>
         </v-toolbar-title>

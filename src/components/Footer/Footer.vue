@@ -1,7 +1,7 @@
 <template>
   <v-footer id="footer" dark padless>
     <v-card class="flex" flat tile>
-      <v-img id="imageFooter" src="@/assets/footer.jpg">
+      <v-img id="imageFooter" src="@/assets/footerImage/footer.jpg">
         <v-row no-gutters>
           <v-col>
             <v-card class="transparent" outlined tile xs6>

@@ -35,21 +35,21 @@ export default {
       {
         id: 'MetricsDiversity',
         title: "Diversidad",
-        src: require("@/assets/values.png"),
+        src: require("@/assets/metricsImages/values.png"),
         description:
           "Las miembros de las comunidades, son mujeres con experiencia en diferentes ramas de la tecnologia"
       },
       {
         id: 'MetricsCommunity',
         title: "Comunidades",
-        src: require("@/assets/trabajo-social.png"),
+        src: require("@/assets/metricsImages/trabajo-social.png"),
         description:
           "Existen 8 comunidades en Cochabamba que trabajan por la integracion de la mujer en el area de la tecnologia "
       },
       {
         id: 'MetricsWomenWork',
         title: "Mujeres trabajando",
-        src: require("@/assets/ayudar.png"),
+        src: require("@/assets/metricsImages/ayudar.png"),
         description:
           "Se ha roto esa brecha de genero, mostrando las capacidades de la mujer"
       }
