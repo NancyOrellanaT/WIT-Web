@@ -83,7 +83,7 @@ export default {
       this.$vuetify.goTo(0);
     },
     goTo(route) {
-      this.$router.push(route);
+      this.$router.push(route).catch(err => err);
     }
   }
 };

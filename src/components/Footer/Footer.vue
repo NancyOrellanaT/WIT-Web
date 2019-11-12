@@ -9,13 +9,18 @@
                 <strong id="labelFooterMenu">MENU</strong>
               </v-layout>
               <v-layout justify-center>
-                <v-btn text id="buttonFooterWIT">
-                  <router-link tag="span" to="/">Women in Technology</router-link>
+                <v-btn text id="buttonFooterActivities"  @click="toTop()">
+                  <router-link tag="span" to="/about-us">Nuestro Equipo</router-link>
                 </v-btn>
               </v-layout>
               <v-layout justify-center>
-                <v-btn text id="buttonFooterContact">
-                  <router-link tag="span" to="/contact">Contact</router-link>
+                <v-btn text id="buttonFooterActivities" @click="toTop()">
+                  <router-link tag="span" to="/activities">Actividades</router-link>
+                </v-btn>
+              </v-layout>
+              <v-layout justify-center>
+                <v-btn text id="buttonFooterContact" @click="toTop()">
+                  <router-link tag="span" to="/contact">Contáctanos</router-link>
                 </v-btn>
               </v-layout>
             </v-card>
@@ -108,7 +113,7 @@
                   ></v-text-field>
                 </v-form>
               </v-layout>
-              <v-layout class="px-10 pb-5" justify-end>
+              <v-layout class="px-10 pb-5" justify-center>
                 <v-btn
                   id="buttonFooterSignin"
                   color="pink dark -1"
@@ -310,6 +315,9 @@ export default {
     resetValidation() {
       this.$refs.form.reset();
       this.messages.intereses = ["otros"];
+    },
+    toTop() {
+      this.$vuetify.goTo(0);
     }
   }
 };
