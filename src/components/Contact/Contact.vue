@@ -1,28 +1,16 @@
 <template>
-  <v-container class="containerContactFormPrincipalContainer mt-12" fluid grid-list-md>
-    <section>
-      <v-parallax
-        id="parallaxContact"
-        class="image"
-        src="https://communitylivingontario.ca/wp-content/uploads/2017/03/img-forum.jpg"
-        height="400"
-      >
-        <v-layout column align-center justify-center class="black--text">
-          <h1 id="labelContactTitle" class="header ma-5 mb-2 white--text text-center">Contacto</h1>
-        </v-layout>
-      </v-parallax>
-    </section>
+  <v-container class="containerContactFormPrincipalContainer my-12" fluid grid-list-md>
+    <h1>Nuestras oficinas</h1>
+    <HorizontalDivider />
     <v-layout row wrap>
-      <v-flex fill-height xs12 sm6 md6>
-        <v-card color="transparent">
-          <v-card-title primary class="title">Nuestras Oficinas</v-card-title>
-          <gmap-map
-            :options="{gestureHandling: 'none'}"
-            :center="center"
-            :zoom="16"
-            style="width:100%;  height: 400px;"
-          >
-            <gmap-marker title="Women in Technology Office" :position="position" @click="openInfoWindow()">
+      <v-flex class="ma-12" fill-height xs12 sm4 md4>
+        <v-card hover color="transparent">
+          <gmap-map class="map" :options="{gestureHandling: 'none'}" :center="center" :zoom="16">
+            <gmap-marker
+              title="Women in Technology Office"
+              :position="position"
+              @click="openInfoWindow()"
+            >
               <GmapInfoWindow :opened="openiw" @closeclick="openiw=false">
                 Women in Technology
                 <br />America #5454
@@ -31,11 +19,15 @@
           </gmap-map>
         </v-card>
       </v-flex>
-      <v-flex fill-height xs12 sm6 md6>
-        <v-card color="transparent">
+      <v-flex xs12 sm6 md6>
+        <v-card hover class="mt-12 contact-card" color="transparent">
           <v-layout justify-center>
-            <v-card-title primary class="title">FORMULARIO DE CONTACTO</v-card-title>
+            <v-card-title class="font-weight-black">CONTÁCTANOS</v-card-title>
           </v-layout>
+          <v-card-subtitle class="py-0">¡Bienvenido/a a nuestra comunidad!</v-card-subtitle>
+          <v-card-subtitle
+            class="py-0"
+          >Por favor mandanos tus sugerencias o comentarios para que podamos contactarnos contigo</v-card-subtitle>
           <v-form
             class="formContactForm pd-12 pr-12 pl-12"
             ref="form"
@@ -43,7 +35,9 @@
             :lazy-validation="lazy"
           >
             <v-text-field
+              clearable
               class="textfieldContactNamefield"
+              color="pink darken-1"
               v-model="nombre"
               :counter="50"
               :rules="nameRules"
@@ -52,27 +46,33 @@
             ></v-text-field>
 
             <v-text-field
+              clearable
               class="textfieldContactEmailfield"
+              color="pink darken-1"
               v-model="email"
               :rules="emailRules"
               label="E-mail"
               required
             ></v-text-field>
 
-            <v-text-field
+            <v-textarea
+              clearable
+              counter
+              no-resize
               class="textfieldContactMessagefield"
+              color="pink darken-1"
               v-model="mensaje"
               :rules="messageRules"
               label="Message"
               required
-            ></v-text-field>
+            ></v-textarea>
 
             <v-btn
               :disabled="!valid"
-              color="success"
-              class="mr-4"
+              color="deep-purple darken-2"
+              class="mr-4 white--text"
               @click="validate(); addMessageSnackbar(true)"
-            >Validate</v-btn>
+            >ENVIAR</v-btn>
             <v-snackbar
               id="snackbarFooterMessagge"
               :color="colorSnackbar"
@@ -90,8 +90,13 @@
 </template>
 
 <script>
+import HorizontalDivider from "../utils/HorizontalDivider";
+
 const API_URL = "http://localhost:4000/contacto";
 export default {
+  components: {
+    HorizontalDivider
+  },
   data: () => ({
     openiw: false,
     position: { lat: -17.3736, lng: -66.1467 },
@@ -102,18 +107,18 @@ export default {
     colorSnackbar: "",
     textSnackbar: "",
     nameRules: [
-      v => !!v || "Debe Introducir un Nombre",
+      v => !!v || "Debe introducir un nombre",
       v => (v && v.length <= 50) || "El nombre debe tener menos de 50 letras",
       v => /.*\S.*/.test(v) || "El mensaje debe contener al menos una letra"
     ],
     nombre: "",
     emailRules: [
-      v => !!v || "Debe Introducir un E-mail",
+      v => !!v || "Debe introducir un e-mail",
       v => /.+@.+\..+/.test(v) || "El E-mail debe ser valido"
     ],
     email: "",
     messageRules: [
-      v => !!v || "Debe Introducir un Mensaje",
+      v => !!v || "Debe introducir un mensaje",
       v =>
         (v && v.length <= 8000) || "El mensaje debe tener menos de 8000 letras",
       v => /.*\S.*/.test(v) || "El mensaje debe contener al menos una palabra"
@@ -170,7 +175,7 @@ export default {
       this.snackbar = true;
     },
 
-    openInfoWindow () {
+    openInfoWindow() {
       this.openiw = true;
     }
   }
@@ -178,9 +183,15 @@ export default {
 </script>
 
 <style scoped>
-
 .image {
   filter: brightness(0.7);
 }
+.map {
+  width: 100%;
+  height: 500px;
+}
 
+.contact-card {
+  height: 500px;
+}
 </style>

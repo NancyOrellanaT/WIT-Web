@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import AboutUs from '../views/AboutUs.vue'
 import Activities from '../views/Activities.vue'
-import Contact from '@/components/contact/Contact.vue'
+import Contact from '../views/Contact.vue'
 
 Vue.use(VueRouter)
 

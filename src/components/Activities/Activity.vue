@@ -97,7 +97,7 @@ export default {
 
 <style scoped>
 .image {
-  filter: brightness(0.5);
+  filter: brightness(0.6);
 }
 
 </style>
