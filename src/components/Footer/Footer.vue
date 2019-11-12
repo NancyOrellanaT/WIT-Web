@@ -95,15 +95,18 @@
                 <strong id="labelFooterSignin">Ingresa tu correo electronico para recibir noticias:</strong>
               </v-layout>
               <v-layout class="px-10" justify-center>
-                <v-text-field
-                  id="textfieldFooterEmail"
-                  label="Email"
-                  hint="example@gmail.com"
-                  persistent-hint
-                  outlined
-                  v-model="message.email"
-                  :rules="[rules.required, rules.email]"
-                ></v-text-field>
+                <v-form ref="form">
+                  <v-text-field
+                    id="textfieldFooterEmail"
+                    clearable
+                    label="Email"
+                    hint="example@gmail.com"
+                    persistent-hint
+                    outlined
+                    v-model="message.email"
+                    :rules="[rules.required, rules.email]"
+                  ></v-text-field>
+                </v-form>
               </v-layout>
               <v-layout class="px-10 pb-5" justify-end>
                 <v-btn
@@ -116,34 +119,51 @@
                   <v-card id="cardSignin">
                     <v-card-title
                       id="labelCardInterests"
-                    >Selecciona los tópicos en los que tienes intereses</v-card-title>
+                    >Selecciona los tópicos en los que te interesan</v-card-title>
                     <v-divider></v-divider>
                     <v-card-text style="height: 300px;">
                       <v-container fluid>
-                        <v-checkbox
-                          id="checkboxCardActivities"
-                          v-model="message.intereses"
-                          label="Actividades"
-                          value="actividades"
-                        ></v-checkbox>
-                        <v-checkbox
-                          id="checkboxCardNews"
-                          v-model="message.intereses"
-                          label="Noticias"
-                          value="noticias"
-                        ></v-checkbox>
-                        <v-checkbox
-                          id="checkboxCardContests"
-                          v-model="message.intereses"
-                          label="Concursos"
-                          value="concursos"
-                        ></v-checkbox>
-                        <v-checkbox
-                          id="checkboxCardCuriosities"
-                          v-model="message.intereses"
-                          label="Curiosidades"
-                          value="curiosidades"
-                        ></v-checkbox>
+                        <v-form>
+                          <v-checkbox
+                            id="checkboxCardActivities"
+                            v-model="message.intereses"
+                            label="Actividades"
+                            value="actividades"
+                            :rules="rulesCB"
+                            hide-details
+                          ></v-checkbox>
+                          <v-checkbox
+                            id="checkboxCardNews"
+                            v-model="message.intereses"
+                            label="Noticias"
+                            value="noticias"
+                            :rules="rulesCB"
+                            hide-details
+                          ></v-checkbox>
+                          <v-checkbox
+                            id="checkboxCardContests"
+                            v-model="message.intereses"
+                            label="Concursos"
+                            value="concursos"
+                            :rules="rulesCB"
+                            hide-details
+                          ></v-checkbox>
+                          <v-checkbox
+                            id="checkboxCardCuriosities"
+                            v-model="message.intereses"
+                            label="Curiosidades"
+                            value="curiosidades"
+                            :rules="rulesCB"
+                            hide-details
+                          ></v-checkbox>
+                          <v-checkbox
+                            id="checkboxCardOthers"
+                            v-model="message.intereses"
+                            label="Otros"
+                            value="otros"
+                            :rules="rulesCB"
+                          ></v-checkbox>
+                        </v-form>
                       </v-container>
                     </v-card-text>
                     <v-divider></v-divider>
@@ -156,6 +176,7 @@
                         @click="dialog = false"
                       >Cerrar</v-btn>
                       <v-btn
+                        :disabled="validate()"
                         id="buttonCardSend"
                         type="submit"
                         color="pink lighten-3"
@@ -189,6 +210,7 @@ const API_URL = "http://localhost:4000/registros";
 export default {
   data() {
     return {
+      valid: false,
       full: false,
       dialogm1: "",
       dialog: false,
@@ -209,9 +231,18 @@ export default {
       messages: [],
       message: {
         email: "",
-        intereses: []
+        intereses: ["otros"]
       }
     };
+  },
+
+  computed: {
+    rulesCB() {
+      return [
+        this.message.intereses.length > 0 ||
+          "At least one item should be selected"
+      ];
+    }
   },
 
   mounted() {
@@ -222,6 +253,13 @@ export default {
       });
   },
   methods: {
+    validate() {
+      if (this.message.intereses.length > 0) {
+        return false;
+      } else {
+        return true;
+      }
+    },
     checkEmail() {
       if (this.validEmail(this.message.email)) {
         this.activateDialog();
@@ -261,12 +299,17 @@ export default {
         ? "¡Gracias por enviarnos tus preferencias!, pronto estaremos contactándonos contigo."
         : "¡Cuidado! Por favor asegurate de ingresar un e-mail invalido";
       this.snackbar = true;
+      this.resetValidation();
     },
     activateDialog() {
       this.dialog = true;
     },
     disableDialog() {
       this.dialog = false;
+    },
+    resetValidation() {
+      this.$refs.form.reset();
+      this.messages.intereses = ["otros"];
     }
   }
 };
