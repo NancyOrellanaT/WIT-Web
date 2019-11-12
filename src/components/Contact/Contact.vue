@@ -4,7 +4,7 @@
     <HorizontalDivider />
     <v-layout row wrap>
       <v-flex class="mt-12 mx-5" fill-height xs12 sm5 md5>
-        <v-card hover color="transparent">
+        <v-card color="transparent">
           <gmap-map class="map" :options="{gestureHandling: 'none'}" :center="center" :zoom="16">
             <gmap-marker
               title="Women in Technology Office"
@@ -20,7 +20,7 @@
         </v-card>
       </v-flex>
       <v-flex xs12 sm6 md6>
-        <v-card hover class="mt-12 contact-card" color="transparent">
+        <v-card hover shaped class="mt-12 contact-card" color="transparent">
           <v-layout justify-center>
             <v-card-title class="font-weight-black">CONTÁCTANOS</v-card-title>
           </v-layout>
