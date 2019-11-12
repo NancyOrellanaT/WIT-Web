@@ -3,24 +3,42 @@
     <v-app-bar id="appbar" elevate-on-scroll :color="color" :dark="fontColorDark" fixed>
       <v-btn id="buttonAppbarToHome" text @click="toTop">
         <v-img class="mr-3" src="@/assets/LogoWIT.png" height="20px" width="30px"></v-img>
-        <v-toolbar-title id="labelAppbarTitle">
-          <span @click="goTo('/')" class="font-navbar">Women in Technology</span>
+        <v-toolbar-title id="labelAppbarTitle" @click="goTo('/')">
+          <span class="font-navbar">Women in Technology</span>
         </v-toolbar-title>
       </v-btn>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn text @click="toTop" v-for="(option, i) in options" :key="i" :id="option.id">
-          <span @click="goTo(option.route)" :color="color">{{ option.text }}</span>
+        <v-btn
+          text
+          @click="toTop; goTo(option.route)"
+          v-for="(option, i) in options"
+          :key="i"
+          :id="option.id"
+        >
+          <span class="navbar-text" :color="color">{{ option.text }}</span>
         </v-btn>
       </v-toolbar-items>
-      <v-btn id="buttonNavbarOpenDrawerMenu" icon class="hidden-md-and-up" @click="sidebar = !sidebar">
+      <v-btn
+        id="buttonNavbarOpenDrawerMenu"
+        icon
+        class="hidden-md-and-up"
+        @click="sidebar = !sidebar"
+      >
         <v-icon>mdi-dots-vertical</v-icon>
       </v-btn>
     </v-app-bar>
 
     <v-navigation-drawer v-model="sidebar" fixed>
       <v-list dense>
-        <v-list-item v-for="(option, i) in options" :key="i" link :to="option.route" @click="toTop()" :id="option.id">
+        <v-list-item
+          v-for="(option, i) in options"
+          :key="i"
+          link
+          :to="option.route"
+          @click="toTop()"
+          :id="option.id"
+        >
           <v-list-item-icon>
             <v-icon :id="option.idIcon">{{ option.icon }}</v-icon>
           </v-list-item-icon>
@@ -43,26 +61,26 @@ export default {
     options: [
       {
         id: "buttonAppbarOurTeam",
-        idText: 'titleNavigationDrawerOurTeam',
+        idText: "titleNavigationDrawerOurTeam",
         text: "NUESTRO EQUIPO",
         route: "/about-us",
-        idIcon: 'iconNavigationDrawerOurTeam',
+        idIcon: "iconNavigationDrawerOurTeam",
         icon: "mdi-face"
       },
       {
         id: "buttonAppbarActivities",
-        idText: 'titleNavigationDrawerActivities',
+        idText: "titleNavigationDrawerActivities",
         text: "ACTIVIDADES",
         route: "/activities",
-        idIcon: 'iconNavigationDrawerActivities',
+        idIcon: "iconNavigationDrawerActivities",
         icon: "mdi-home"
       },
       {
         id: "buttonAppbarContactUs",
-        idText: 'titleNavigationDrawerOurContactUs',
+        idText: "titleNavigationDrawerOurContactUs",
         text: "CONTÁCTANOS",
         route: "/contact",
-        idIcon: 'iconNavigationDrawerContactUs',
+        idIcon: "iconNavigationDrawerContactUs",
         icon: "mdi-phone"
       }
     ]
@@ -93,4 +111,9 @@ export default {
 .font-navbar {
   font-size: 0.7em;
 }
+
+.navbar-text:hover {
+  color: #d81b60;
+}
+
 </style>
