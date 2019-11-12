@@ -1,9 +1,9 @@
 <template>
-  <v-container class="containerContactFormPrincipalContainer my-12" fluid grid-list-md>
+  <v-container class="containerContactFormPrincipalContainer my-12 pa-12" fluid grid-list-md>
     <h1>Nuestras oficinas</h1>
     <HorizontalDivider />
     <v-layout row wrap>
-      <v-flex class="ma-12" fill-height xs12 sm4 md4>
+      <v-flex class="mt-12 mx-5" fill-height xs12 sm5 md5>
         <v-card hover color="transparent">
           <gmap-map class="map" :options="{gestureHandling: 'none'}" :center="center" :zoom="16">
             <gmap-marker
@@ -63,7 +63,7 @@
               color="pink darken-1"
               v-model="mensaje"
               :rules="messageRules"
-              label="Message"
+              label="Mensae"
               required
             ></v-textarea>
 
@@ -127,7 +127,9 @@ export default {
     contactMessagesResult: [],
     lazy: false
   }),
-
+  mounted: function() {
+    this.openInfoWindow();
+  },
   methods: {
     validate() {
       if (this.$refs.form.validate()) {
@@ -183,12 +185,11 @@ export default {
 </script>
 
 <style scoped>
-.image {
-  filter: brightness(0.7);
-}
 .map {
   width: 100%;
   height: 500px;
+  border: 20px solid rgb(255, 255, 255);
+  border-radius: 4px;
 }
 
 .contact-card {
