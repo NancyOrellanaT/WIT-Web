@@ -2,8 +2,8 @@
   <v-app id="app">
     <v-content>
       <router-view/>
-      <Navbar/>
-      <Footer/>
+      <Navbar v-if="showComponent"/>
+      <Footer v-if="showComponent"/>
     </v-content>
   </v-app>
 </template>
@@ -18,6 +18,11 @@ export default {
     Footer,
     Navbar,
   },
+  computed: {
+    showComponent () {
+      return this.$route.path !== '/login'
+    }
+  }
 };
 </script>
 
