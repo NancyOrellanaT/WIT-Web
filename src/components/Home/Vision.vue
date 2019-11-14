@@ -18,7 +18,7 @@ export default {
     HorizontalDivider
   },
   data: () => ({
-    description: 'Te invitamos a ser parte de la comunidad en las distintas áreas de la tecnología.'
+    description: 'Te invitamos a ser parte de la comunidad para compartir y conocer las distintas áreas de la tecnología.'
   })
 }
 </script>

@@ -15,7 +15,7 @@
         <v-spacer></v-spacer>
         <v-col class="text-center" cols="12">
           <v-row class="mt-5" align="center" justify="center">
-            <v-btn id="buttonCarousel" large color="deep-purple darken-2" dark>Lorem ipsum</v-btn>
+            <v-btn id="buttonCarousel" large color="deep-purple darken-2" to="/contact" dark>CONTÁCTANOS</v-btn>
           </v-row>
           <v-icon class="ma-5" color="pink lighten-2" x-large :id="slides[i].id">{{ slides[i].icon }}</v-icon>
         </v-col>

@@ -2,7 +2,7 @@
   <div class="mb-8">
     <v-container class="grey lighten-5 my-12">
       <h1 id="labelTestimonialsTitle" class="mb-5 main-font" align="center" justify="center">Testimonios</h1>
-      <h3 id="labelTestimonialsDescription" class="font-weight-light second-font" align="center" justify="center">Lorem ipsum dolor sabitant blandit id, litora congue enim rhoncus</h3>
+      <h3 id="labelTestimonialsDescription" class="font-weight-light second-font" align="center" justify="center">¡Todos son bienvenidos! Te presentamos algunos testimonios</h3>
       <HorizontalDivider class="mb-6"/>
       <v-row no-gutters class="second-font">
         <v-col class="pa-1" v-for="(member, i) in members" :key="i" cols="12" sm="4" md="4">
@@ -40,7 +40,6 @@
                     justify="center"
                   >
                     <h3 class="mt-5" :id="'labelHoverName' + i">{{ convertNameToUpperCase(member.name) }}</h3>
-                    <h3 :id="'labelHoverOccupation' + i">{{ member.occupation }}</h3>
                     <h4 class="pa-5 font-weight-regular" :id="'labelHoverTestimony' + i">{{ member.storie }}</h4>
                   </div>
                 </v-expand-transition>
@@ -67,44 +66,38 @@ export default {
         {
           img: "https://adadevelopersacademy.org/wp-content/uploads/2012/04/RC_2290-Sahana-600x400.jpg",
           name: "Elena Ortega",
-          occupation: "Ingeniería de Calidad",
           storie:
-            "Lorem ipsum dolor sit amet consectetur adipiscing elit diam, enim mi eget dis interdum dictum mattis. Eros nam ac aptent etiam felis parturient, primis massa fames arcu per quis."
+            "La comunidad fue muy cooperativa para que pueda aprender más sobre programación. Lo cual hoy en día me encanta."
         },
         {
           img: "https://adadevelopersacademy.org/wp-content/uploads/2012/04/RC_2377-Lauren-600x400.jpg",
           name: "Ana Moya",
-          occupation: "Ingeniería de Calidad",
           storie:
-            "Lorem ipsum dolor sit amet consectetur adipiscing elit diam, enim mi eget dis interdum dictum mattis. Eros nam ac aptent etiam felis parturient"
+            "Asistí a las actividades de la comunidad y la verdad me gustaron mucho, es una gran oportunidad de aprender."
         },
         {
           img: "https://adadevelopersacademy.org/wp-content/uploads/2012/05/RC_2349-Katrina-600x400.jpg",
           name: "Ana Moya",
-          occupation: "Ingeniería de Calidad",
           storie:
-            "Lorem ipsum dolor sit amet consectetur adipiscing elit diam, enim mi eget dis interdum dictum mattis. Eros nam ac aptent etiam felis parturient"
+            "Perdí el miedo a programar gracias a la ayuda que me brindaron los miembros de la comunidad."
         },
         {
           img: "https://adadevelopersacademy.org/wp-content/uploads/2012/04/RC_2338Angela-600x400.jpg",
           name: "Elena Ortega",
-          occupation: "Ingeniería de Calidad",
           storie:
-            "Lorem ipsum dolor sit amet consectetur adipiscing elit diam, enim mi eget dis interdum dictum mattis. Eros nam ac aptent etiam felis parturient, primis massa fames arcu per quis."
+            "Gracias a toda la colaboración de la comunidad decidí estudiar ingeniería en sistemas, porque encontré lo que realmente me gustaba."
         },
         {
           img: "https://adadevelopersacademy.org/wp-content/uploads/2012/09/RC_2246-Deirdre-600x400.jpg",
-          name: "Ana Moya",
-          occupation: "Ingeniería de Calidad",
+          name: "Luana Guza",
           storie:
-            "Lorem ipsum dolor sit amet consectetur adipiscing elit diam, enim mi eget dis interdum dictum mattis. Eros nam ac aptent etiam felis parturient"
+            "Gracias a todas las actividades, ahora soy miembro activo de la comunidad. ¡Los invito a compartir una gran experiencia!"
         },
         {
           img: "https://adadevelopersacademy.org/wp-content/uploads/2012/04/RC_2386-Stephanie-600x400.jpg",
-          name: "Ana Moya",
-          occupation: "Ingeniería de Calidad",
+          name: "Irma Soruco",
           storie:
-            "Lorem ipsum dolor sit amet consectetur adipiscing elit diam, enim mi eget dis interdum dictum mattis. Eros nam ac aptent etiam felis parturient"
+            "Con todo lo aprendido aprendí mucho sobre tecnología y gracias a la comunidad hoy puedo aplicarlo a mi trabajo."
         }
       ]
     };

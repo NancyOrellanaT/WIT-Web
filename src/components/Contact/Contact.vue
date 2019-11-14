@@ -27,7 +27,7 @@
           <v-card-subtitle class="py-0">¡Bienvenido/a a nuestra comunidad!</v-card-subtitle>
           <v-card-subtitle
             class="py-0"
-          >Por favor mandanos tus sugerencias o comentarios para que podamos contactarnos contigo</v-card-subtitle>
+          >Por favor mandanos tus sugerencias o comentarios para que podamos contactarnos contigo.</v-card-subtitle>
           <v-form
             class="formContactForm pd-12 pr-12 pl-12"
             ref="form"
@@ -37,7 +37,7 @@
             <v-text-field
               clearable
               class="textfieldContactNamefield"
-              color="pink darken-1"
+              color="pink lighten-3"
               v-model="nombre"
               :counter="50"
               :rules="nameRules"
@@ -48,7 +48,7 @@
             <v-text-field
               clearable
               class="textfieldContactEmailfield"
-              color="pink darken-1"
+              color="pink lighten-3"
               v-model="email"
               :rules="emailRules"
               label="E-mail"
@@ -60,10 +60,10 @@
               counter
               no-resize
               class="textfieldContactMessagefield"
-              color="pink darken-1"
+              color="pink lighten-3"
               v-model="mensaje"
               :rules="messageRules"
-              label="Mensae"
+              label="Mensaje"
               required
             ></v-textarea>
 
@@ -187,12 +187,12 @@ export default {
 <style scoped>
 .map {
   width: 100%;
-  height: 500px;
+  height: 520px;
   border: 20px solid rgb(255, 255, 255);
   border-radius: 4px;
 }
 
 .contact-card {
-  height: 500px;
+  height: 530px;
 }
 </style>
