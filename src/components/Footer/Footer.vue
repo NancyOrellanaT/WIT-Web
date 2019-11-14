@@ -9,7 +9,7 @@
                 <strong id="labelFooterMenu">MENU</strong>
               </v-layout>
               <v-layout justify-center>
-                <v-btn text id="buttonFooterActivities" @click="toTop()">
+                <v-btn text id="buttonFooterAboutus" @click="toTop()">
                   <router-link tag="span" to="/about-us">Nuestro Equipo</router-link>
                 </v-btn>
               </v-layout>
