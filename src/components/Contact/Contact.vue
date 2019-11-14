@@ -94,7 +94,7 @@
 </template>
 
 <script>
-import HorizontalDivider from "../utils/HorizontalDivider";
+import HorizontalDivider from "../Utils/HorizontalDivider";
 
 const API_URL = "http://localhost:4000/contacto";
 export default {
