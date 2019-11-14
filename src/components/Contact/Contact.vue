@@ -1,17 +1,18 @@
 <template>
-  <v-container class="containerContactFormPrincipalContainer my-12 pa-12" fluid grid-list-md>
-    <h1>Nuestras oficinas</h1>
+  <v-container id="containerContactFormPrincipal my-12 pa-12" fluid grid-list-md>
+    <h1 id="labelContactOurOffices">Nuestras oficinas</h1>
     <HorizontalDivider />
     <v-layout row wrap>
       <v-flex class="mt-12 mx-5" fill-height xs12 sm5 md5>
         <v-card color="transparent">
-          <gmap-map class="map" :options="{gestureHandling: 'none'}" :center="center" :zoom="16">
+          <gmap-map id="mapContact" class="map" :options="{gestureHandling: 'none'}" :center="center" :zoom="16">
             <gmap-marker
               title="Women in Technology Office"
+              id="pointerContactMap"
               :position="position"
               @click="openInfoWindow()"
             >
-              <GmapInfoWindow :opened="openiw" @closeclick="openiw=false">
+              <GmapInfoWindow id="informationMapContact" :opened="openiw" @closeclick="openiw=false">
                 Women in Technology
                 <br />America #5454
               </GmapInfoWindow>
@@ -20,23 +21,25 @@
         </v-card>
       </v-flex>
       <v-flex xs12 sm6 md6>
-        <v-card hover shaped class="mt-12 contact-card" color="transparent">
+        <v-card hover shaped id="cardFormContact" class="mt-12 contact-card" color="transparent">
           <v-layout justify-center>
-            <v-card-title class="font-weight-black">CONTÁCTANOS</v-card-title>
+            <v-card-title id="mainLabelFormContact" class="font-weight-black">CONTÁCTANOS</v-card-title>
           </v-layout>
-          <v-card-subtitle class="py-0">¡Bienvenido/a a nuestra comunidad!</v-card-subtitle>
+          <v-card-subtitle id="subtitleFormaContact1" class="py-0">¡Bienvenido/a a nuestra comunidad!</v-card-subtitle>
           <v-card-subtitle
             class="py-0"
+            id="subtitleFormaContact2"
           >Por favor mandanos tus sugerencias o comentarios para que podamos contactarnos contigo.</v-card-subtitle>
           <v-form
             class="formContactForm pd-12 pr-12 pl-12"
+            id="formContact"
             ref="form"
             v-model="valid"
             :lazy-validation="lazy"
           >
             <v-text-field
               clearable
-              class="textfieldContactNamefield"
+              id="textfieldContactNamefield"
               color="pink lighten-3"
               v-model="nombre"
               :counter="50"
@@ -47,7 +50,7 @@
 
             <v-text-field
               clearable
-              class="textfieldContactEmailfield"
+              id="textfieldContactEmailfield"
               color="pink lighten-3"
               v-model="email"
               :rules="emailRules"
@@ -59,7 +62,7 @@
               clearable
               counter
               no-resize
-              class="textfieldContactMessagefield"
+              id="textfieldContactMessagefield"
               color="pink lighten-3"
               v-model="mensaje"
               :rules="messageRules"
@@ -70,6 +73,7 @@
             <v-btn
               :disabled="!valid"
               color="deep-purple darken-2"
+              id="buttonFormContact"
               class="mr-4 white--text"
               @click="validate(); addMessageSnackbar(true)"
             >ENVIAR</v-btn>
