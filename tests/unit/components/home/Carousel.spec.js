@@ -15,7 +15,7 @@ describe('Carousel', () => {
 
   it('carousel button is visible in component and contain correct text', () => {
     assert.equal(wrapper.find('#buttonCarousel').exists(), true)
-    assert.equal(wrapper.find('#buttonCarousel').text(), 'Lorem ipsum')
+    assert.equal(wrapper.find('#buttonCarousel').text(), 'CONTÁCTANOS')
   })
 
 })
