@@ -1,7 +1,7 @@
 <template>
   <div v-scroll="onScroll">
     <v-app-bar id="appbar" elevate-on-scroll :color="color" :dark="fontColorDark" fixed>
-      <v-btn id="buttonAppbarToHome" text @click="toTop">
+      <v-btn id="buttonAppbarToHome" text>
         <v-img class="mr-3" src="@/assets/LogoWIT.png" height="20px" width="30px"></v-img>
         <v-toolbar-title id="labelAppbarTitle" @click="goTo('/')">
           <span class="font-navbar">Women in Technology</span>
@@ -11,12 +11,13 @@
       <v-toolbar-items class="hidden-sm-and-down">
         <v-btn
           text
-          @click="toTop; goTo(option.route)"
+          @click="goTo(option.route)"
           v-for="(option, i) in options"
           :key="i"
           :id="option.id"
+          class="navbar-btn"
         >
-          <span class="navbar-text" :color="color">{{ option.text }}</span>
+          <span :color="color">{{ option.text }}</span>
         </v-btn>
       </v-toolbar-items>
       <v-btn
@@ -35,8 +36,7 @@
           v-for="(option, i) in options"
           :key="i"
           link
-          :to="option.route"
-          @click="toTop()"
+          @click="goTo(option.route)"
           :id="option.id"
         >
           <v-list-item-icon>
@@ -60,6 +60,14 @@ export default {
     sidebar: false,
     options: [
       {
+        id: "buttonAppbarHome",
+        idText: "titleNavigationDrawerHome",
+        text: "INICIO",
+        route: "/",
+        idIcon: "iconNavigationDrawerHome",
+        icon: "mdi-home"
+      },
+      {
         id: "buttonAppbarOurTeam",
         idText: "titleNavigationDrawerOurTeam",
         text: "NUESTRO EQUIPO",
@@ -73,7 +81,7 @@ export default {
         text: "ACTIVIDADES",
         route: "/activities",
         idIcon: "iconNavigationDrawerActivities",
-        icon: "mdi-home"
+        icon: "mdi-human-greeting"
       },
       {
         id: "buttonAppbarContactUs",
@@ -81,7 +89,7 @@ export default {
         text: "CONTÁCTANOS",
         route: "/contact",
         idIcon: "iconNavigationDrawerContactUs",
-        icon: "mdi-phone"
+        icon: "mdi-face-agent"
       }
     ]
   }),
@@ -97,10 +105,8 @@ export default {
         this.fontColorDark = true;
       }
     },
-    toTop() {
-      this.$vuetify.goTo(0);
-    },
     goTo(route) {
+      this.$vuetify.goTo(0);
       this.$router.push(route).catch(err => err);
     }
   }
@@ -112,8 +118,12 @@ export default {
   font-size: 0.7em;
 }
 
-.navbar-text:hover {
-  color: #d81b60;
+.navbar-btn::before {
+    color: transparent
+}
+
+.navbar-btn:hover {
+    color: #d81b60;
 }
 
 </style>

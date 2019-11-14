@@ -9,7 +9,7 @@
                 <strong id="labelFooterMenu">MENU</strong>
               </v-layout>
               <v-layout justify-center>
-                <v-btn text id="buttonFooterActivities"  @click="toTop()">
+                <v-btn text id="buttonFooterActivities" @click="toTop()">
                   <router-link tag="span" to="/about-us">Nuestro Equipo</router-link>
                 </v-btn>
               </v-layout>
@@ -97,7 +97,7 @@
           <v-col>
             <v-card class="transparent" outlined tile xs6>
               <v-layout class="pa-5 px-10" justify-center>
-                <strong id="labelFooterSignin">Ingresa tu correo electronico para recibir noticias:</strong>
+                <strong id="labelFooterSignin">Ingresa tu correo electrónico para recibir noticias:</strong>
               </v-layout>
               <v-layout class="px-10" justify-center>
                 <v-form ref="form">
@@ -124,7 +124,7 @@
                   <v-card id="cardSignin">
                     <v-card-title
                       id="labelCardInterests"
-                    >Selecciona los tópicos en los que te interesan</v-card-title>
+                    >Selecciona los tópicos que te interesan</v-card-title>
                     <v-divider></v-divider>
                     <v-card-text style="height: 300px;">
                       <v-container fluid>
@@ -245,7 +245,7 @@ export default {
     rulesCB() {
       return [
         this.message.intereses.length > 0 ||
-          "At least one item should be selected"
+          "Al menos una opción debe ser seleccionada"
       ];
     }
   },
@@ -302,7 +302,7 @@ export default {
       this.colorSnackbar = successful ? "green darken-2" : "red darken-2";
       this.textSnackbar = successful
         ? "¡Gracias por enviarnos tus preferencias!, pronto estaremos contactándonos contigo."
-        : "¡Cuidado! Por favor asegurate de ingresar un e-mail invalido";
+        : "¡Cuidado! Por favor asegurate de ingresar un e-mail válido";
       this.snackbar = true;
       this.resetValidation();
     },

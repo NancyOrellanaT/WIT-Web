@@ -37,21 +37,21 @@ export default {
         title: "Diversidad",
         src: require("@/assets/values.png"),
         description:
-          "Las miembros de las comunidades, son mujeres con experiencia en diferentes ramas de la tecnologia"
+          "En el mundo las mujeres solamente ocupan un 20% en el área de la tecnología."
       },
       {
         id: 'MetricsCommunity',
         title: "Comunidades",
         src: require("@/assets/trabajo-social.png"),
         description:
-          "Existen 8 comunidades en Cochabamba que trabajan por la integracion de la mujer en el area de la tecnologia "
+          "Existen más 8 comunidades en Cochabamba, Bolivia, que trabajan por la integración de la mujer en el area de la tecnología."
       },
       {
         id: 'MetricsWomenWork',
         title: "Mujeres trabajando",
         src: require("@/assets/ayudar.png"),
         description:
-          "Se ha roto esa brecha de genero, mostrando las capacidades de la mujer"
+          "Se ha roto la brecha de género, mostrando que todos somos capaces."
       }
     ]
   })
