@@ -1,6 +1,6 @@
 import { assert } from 'chai'
 import { shallowMount } from '@vue/test-utils'
-import Navbar from '@/components/navbar/Navbar.vue'
+import Navbar from '@/components/Navbar/Navbar.vue'
 
 describe('Navbar', () => {
   let wrapper = shallowMount(Navbar)

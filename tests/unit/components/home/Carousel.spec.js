@@ -1,6 +1,6 @@
 import { assert } from 'chai'
 import { shallowMount } from '@vue/test-utils'
-import Carousel from '@/components/home/Carousel.vue'
+import Carousel from '@/components/Home/Carousel.vue'
 
 describe('Carousel', () => {
   let wrapper = shallowMount(Carousel)
