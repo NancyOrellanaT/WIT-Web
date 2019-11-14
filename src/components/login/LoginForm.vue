@@ -9,30 +9,38 @@
                 <v-layout row>
                   <v-flex xs12>
                     <v-text-field
-                     name="email"
-                     label="E-Mail"
-                     id="textfieldLoginEmail"
-                     v-model="email"
-                     type="email"
-                     required>
+                      name="email"
+                      label="E-Mail"
+                      id="textfieldLoginEmail"
+                      v-model="email"
+                      type="email"
+                      required>
                     </v-text-field>
                   </v-flex>
                 </v-layout>
                 <v-layout row>
                   <v-flex xs12>
                     <v-text-field
-                     name="password"
-                     label="Contraseña"
-                     id="textfieldLoginPassword"
-                     v-model="password"
-                     type="password"
-                     required>
+                      name="password"
+                      label="Contraseña"
+                      id="textfieldLoginPassword"
+                      v-model="password"
+                      type="password"
+                      required>
                     </v-text-field>
                   </v-flex>
                 </v-layout>
                 <v-layout row>
                   <v-flex xs12>
-                   <v-btn type="submit" large color="pink darken-2" dark>Iniciar Sesión</v-btn>
+                    <v-btn
+                    type="submit"
+                    large
+                    color="pink darken-2"
+                    dark
+                    id="buttonLogin"
+                    >
+                      Iniciar Sesión
+                    </v-btn>
                   </v-flex>
                 </v-layout>
               </form>
