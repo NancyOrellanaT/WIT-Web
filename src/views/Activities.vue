@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import Activity from '@/components/activities/Activity'
+import Activity from '@/components/Activities/Activity'
 
 export default {
   name: 'activities',

@@ -5,7 +5,7 @@
     <v-row class="mb-10 second-font">
       <v-col v-for="(component, i) in components" :key="i" cols="12" sm="4" md="4" align="center" justify="center">
         <v-row align="center" justify="center" class="mb-5">
-          <h3 :id="'label' + component.id">{{ component.title }}</h3>
+          <h3 :id="'label' + component.id" align="center">{{ component.title }}</h3>
         </v-row>
         <v-img
           :id="'image' + component.id"
@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import HorizontalDivider from "../utils/HorizontalDivider";
+import HorizontalDivider from "../Utils/HorizontalDivider";
 
 export default {
   components: {

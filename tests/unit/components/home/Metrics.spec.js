@@ -1,6 +1,6 @@
 import { assert } from 'chai'
 import { shallowMount } from '@vue/test-utils'
-import Metrics from '@/components/home/Metrics.vue'
+import Metrics from '@/components/Home/Metrics.vue'
 
 describe('Metrics', () => {
   let wrapper = shallowMount(Metrics)

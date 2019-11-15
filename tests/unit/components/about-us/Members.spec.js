@@ -1,13 +1,13 @@
-/* import { assert } from 'chai'
+import { assert } from 'chai'
 import { shallowMount } from '@vue/test-utils'
-import Members from '@/components/about-us/Members.vue'
+import Members from '@/components/About-us/Members.vue'
 
 describe('Members', () => {
   let wrapper = shallowMount(Members)
   
-  it('show images of friendly communities', () => {
-    // const COMMUNITY_IMAGES = wrapper.vm.members
-    // assert.equal(wrapper.find('#imageCardMember0').exists(), true)
+  it('information about members page', () => {
+    assert.equal(wrapper.find('#labelMembersTitle').text(), 'Miembros')
+    assert.equal(wrapper.find('#labelMembersDescription').exists(), true)
+    assert.equal(wrapper.vm.members.length, 6)
   })
 })
-*/

@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import Footer from './components/footer/Footer';
-import Navbar from './components/navbar/Navbar';
+import Footer from './components/Footer/Footer';
+import Navbar from './components/Navbar/Navbar';
 
 export default {
   name: "App",
@@ -40,6 +40,26 @@ export default {
 
 .header {
   font-size: 3em;
+}
+
+@media (min-width: 600px) {
+  .name-font {
+    font-size: 1em;
+  }
+
+  .description-font {
+    font-size: 1.5vw;
+  }
+}
+
+@media (min-width: 800px) {
+  .name-font {
+    font-size: 1em;
+  }
+
+  .description-font {
+    font-size: 1vw;
+  }
 }
 
 </style>

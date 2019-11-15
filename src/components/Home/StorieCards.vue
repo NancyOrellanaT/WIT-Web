@@ -19,13 +19,13 @@
                   <v-card
                     v-if="!hover"
                     elevation="7"
-                    class="pa-3"
+                    class="pa-2"
                     color="pink darken-1"
                     width="50%"
                   >
                     <h5
                       :id="'nameTestimony' + i"
-                      class="mx-lg-auto white--text"
+                      class="mx-lg-auto white--text name-font"
                       align="center"
                       justify="center"
                     >{{ member.name }}</h5>
@@ -40,7 +40,7 @@
                     justify="center"
                   >
                     <h3 class="mt-5" :id="'labelHoverName' + i">{{ convertNameToUpperCase(member.name) }}</h3>
-                    <h4 class="pa-5 font-weight-regular" :id="'labelHoverTestimony' + i">{{ member.storie }}</h4>
+                    <h4 class="pa-5 font-weight-regular description-font" :id="'labelHoverTestimony' + i">{{ member.storie }}</h4>
                   </div>
                 </v-expand-transition>
               </v-img>
@@ -53,7 +53,7 @@
 </template>
 
 <script>
-import HorizontalDivider from '../utils/HorizontalDivider'
+import HorizontalDivider from '../Utils/HorizontalDivider'
 
 export default {
   components: {
