@@ -1,6 +1,6 @@
 import { assert } from 'chai'
 import { shallowMount } from '@vue/test-utils'
-import Activities from '@/components/activities/Activity.vue'
+import Activities from '@/components/Activities/Activity.vue'
 
 describe('Activities', () => {
   let wrapper = shallowMount(Activities)

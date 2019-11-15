@@ -1,6 +1,6 @@
 import { assert } from 'chai'
 import { shallowMount } from '@vue/test-utils'
-import MisionParallax from '@/components/home/MisionParallax.vue'
+import MisionParallax from '@/components/Home/MisionParallax.vue'
 
 describe('MisionParallax', () => {
   let wrapper = shallowMount(MisionParallax)
