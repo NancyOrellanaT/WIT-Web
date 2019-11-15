@@ -1,6 +1,6 @@
 import { assert } from 'chai'
 import { shallowMount } from '@vue/test-utils'
-import Communities from '@/components/about-us/Communities.vue'
+import Communities from '@/components/About-us/Communities.vue'
 
 describe('Communities', () => {
   let wrapper = shallowMount(Communities)
