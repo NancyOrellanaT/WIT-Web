@@ -18,13 +18,13 @@
                   <v-card
                     v-if="!hover"
                     elevation="7"
-                    class="pa-3 ma-5 mb-3"
+                    class="pa-2 ma-5 mb-3"
                     color="deep-purple darken-3"
                     width="50%"
                   >
                     <h5
                       :id="'nameMember' + i"
-                      class="mx-lg-auto white--text"
+                      class="mx-lg-auto white--text name-font"
                       align="center"
                       justify="center"
                     >{{ member.name }}</h5>
@@ -42,10 +42,13 @@
                       :id="'labelMemberName' + i"
                       class="mt-5 name-label"
                     >{{ convertNameToUpperCase(member.name) }}</h3>
-                    <h3 :id="'labelMemberOccupation' + i" class="ocuppation-label">{{ member.occupation }}</h3>
+                    <h3
+                      :id="'labelMemberOccupation' + i"
+                      class="ocuppation-font"
+                    >{{ member.occupation }}</h3>
                     <h4
                       :id="'labelMemberDescription' + i"
-                      class="pa-5 font-weight-regular"
+                      class="pa-5 font-weight-regular description-font"
                     >{{ member.description }}</h4>
                   </div>
                 </v-expand-transition>
@@ -117,8 +120,7 @@ export default {
             "https://www.catalunyavoluntaria.cat/wp-content/uploads/2017/07/4-600x400.jpg",
           name: "Aaron Marin",
           occupation: "Desarrollador",
-          description:
-            "Busca mejorar la sociedad mediante la tecnología."
+          description: "Busca mejorar la sociedad mediante la tecnología."
         },
         {
           img:
@@ -156,7 +158,6 @@ export default {
 </script>
 
 <style scoped>
-
 .v-card--reveal {
   align-items: center;
   bottom: 0;
@@ -168,14 +169,6 @@ export default {
 
 .align-bottom {
   margin-top: 49%;
-}
-
-.name-label {
-  font-size: 1em;
-}
-
-.ocuppation-label {
-  font-size: 100%;
 }
 
 </style>
