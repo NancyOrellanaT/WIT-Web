@@ -9,7 +9,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import Carousel from '@/components/Home/Carousel.vue'
 import Metrics from '@/components/Home/Metrics.vue'
 import StorieCards from '@/components/Home/StorieCards.vue'
