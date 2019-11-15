@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import loginForm from '@/components/login/LoginForm.vue'
+import loginForm from '@/components/Login/LoginForm.vue'
 
 export default {
   components: {
@@ -11,7 +11,3 @@ export default {
   }
 }
 </script>
-
-<style>
-
-</style>

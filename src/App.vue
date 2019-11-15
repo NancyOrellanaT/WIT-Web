@@ -42,4 +42,24 @@ export default {
   font-size: 3em;
 }
 
+@media (min-width: 600px) {
+  .name-font {
+    font-size: 1em;
+  }
+
+  .description-font {
+    font-size: 1.5vw;
+  }
+}
+
+@media (min-width: 800px) {
+  .name-font {
+    font-size: 1em;
+  }
+
+  .description-font {
+    font-size: 1vw;
+  }
+}
+
 </style>
