@@ -1,0 +1,30 @@
+pipeline {
+  agent any
+    
+  tools {nodejs "node"}
+    
+  stages {
+        
+    stage('Cloning Git') {
+      steps {
+        git branch: 'development', url:'https://github.com/NancyOrellanaT/WIT-Web.git'
+      }
+    }
+    stage('Install dependencies') {
+      steps {
+        bat 'npm install'
+      }
+    }
+     
+    stage('Unit Testing') {
+      steps {
+         bat 'npm run test:unit'
+      }
+    }
+    stage('Building') {
+      steps {
+         bat 'npm run build'
+      }
+    }
+  }
+}
