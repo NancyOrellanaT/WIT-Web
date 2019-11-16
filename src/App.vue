@@ -1,36 +1,65 @@
 <template>
-  <v-app>
-    <v-app-bar app>
-      <v-toolbar-title class="headline text-uppercase">
-        <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn
-        text
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-      >
-        <span class="mr-2">Latest Release</span>
-      </v-btn>
-    </v-app-bar>
-
+  <v-app id="app">
     <v-content>
-      <HelloWorld/>
+      <router-view/>
+      <Navbar v-if="showComponent"/>
+      <Footer v-if="showComponent"/>
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import Footer from './components/Footer/Footer';
+import Navbar from './components/Navbar/Navbar';
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld,
+    Footer,
+    Navbar,
   },
-  data: () => ({
-    //
-  }),
+  computed: {
+    showComponent () {
+      return this.$route.path !== '/login'
+    }
+  }
 };
 </script>
+
+<style>
+@import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
+
+#app {
+  font-family: "Quicksand", sans-serif;
+  text-align: center;
+  color: #000000;
+}
+.main-font {
+  color: #D81B60;
+}
+
+.header {
+  font-size: 3em;
+}
+
+@media (min-width: 600px) {
+  .name-font {
+    font-size: 1em;
+  }
+
+  .description-font {
+    font-size: 1.5vw;
+  }
+}
+
+@media (min-width: 800px) {
+  .name-font {
+    font-size: 1em;
+  }
+
+  .description-font {
+    font-size: 1vw;
+  }
+}
+
+</style>
