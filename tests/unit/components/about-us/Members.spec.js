@@ -1,6 +1,6 @@
 import { assert } from 'chai'
 import { shallowMount } from '@vue/test-utils'
-import Members from '@/components/About-us/Members.vue'
+import Members from '@/components/about-us/Members.vue'
 
 describe('Members', () => {
   let wrapper = shallowMount(Members)
